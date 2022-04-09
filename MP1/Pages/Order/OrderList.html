@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../Css/page.css">
+    <link rel="stylesheet" href="../../Css/list.css">
+    <link rel="stylesheet" href="../../Css/button.css">
+    <title>Order List</title>
+</head>
+<body>
+<header>
+    <h1>CineGO</h1>
+    <img src="../../Images/CompanyLogo.png" width="150" height="100" alt="CompanyLogo">
+
+</header>
+<nav>
+    <ul>
+        <li><a href="../../Index.html">Strona Główna</a></li>
+        <li><a href="../Movie/MovieList.html">Filmy</a></li>
+        <li><a href="../Store/StoreList.html">Zawartość Zamówień</a></li>
+        <li><a href="../Client/ClientList.html">Klienci</a></li>
+        <li><a href="OrderList.html" class="active">Zamówienia</a></li>
+    </ul>
+</nav>
+<main>
+    <h2>Lista Zamówień</h2>
+    <table class="table-list">
+        <thead>
+        <tr>
+            <th>Kod Zamówienia</th>
+            <th>Imie Klienta</th>
+            <th>Nazwisko Klienta</th>
+            <th>Data Zamówienia</th>
+            <th>Koszt Dostawy</th>
+            <th>Akcje</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Kod Zamówienia">1111</td>
+            <td data-label="Imie Klienta">Jakub</td>
+            <td data-label="Nazwisko Klienta">Matczak</td>
+            <td data-label="Data Zamówienia">12.12.2020</td>
+            <td data-label="Koszt Dostawy">200</td>
+            <td data-label="Akcje">
+                <ul class="list-actions">
+                    <li><a href="OrderDetails.html" class="list-actions-button-details">Szczegóły</a></li>
+                    <li><a href="OrderFormEdit.html" class="list-actions-button-edit">Edytuj</a></li>
+                    <li><a href="" class="list-actions-button-delete">Usuń</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td data-label="Kod Zamówienia">2222</td>
+            <td data-label="Imie Klienta">Michał</td>
+            <td data-label="Nazwisko Klienta">Polak</td>
+            <td data-label="Data Zamówienia">12.06.2020</td>
+            <td data-label="Koszt Dostawy">50</td>
+            <td data-label="Akcje">
+                <ul class="list-actions">
+                    <li><a href="OrderDetails.html" class="list-actions-button-details">Szczegóły</a></li>
+                    <li><a href="OrderFormEdit.html" class="list-actions-button-edit">Edytuj</a></li>
+                    <li><a href="" class="list-actions-button-delete">Usuń</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td data-label="Kod Zamówienia">3333</td>
+            <td data-label="Imie Klienta">Mateusz</td>
+            <td data-label="Nazwisko Klienta">Romaniuk</td>
+            <td data-label="Data Zamówienia">11.10.2020</td>
+            <td data-label="Koszt Dostawy">100</td>
+            <td data-label="Akcje">
+                <ul class="list-actions">
+                    <li><a href="OrderDetails.html" class="list-actions-button-details">Szczegóły</a></li>
+                    <li><a href="OrderFormEdit.html" class="list-actions-button-edit">Edytuj</a></li>
+                    <li><a href="" class="list-actions-button-delete">Usuń</a></li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p><a href="OrderForm.html" class="button-add">Dodaj Nowe Zmówienie</a></p>
+</main>
+<footer>Jakub,Podleśny,s20540</footer>
+</body>
+</html>

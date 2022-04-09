@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../Css/page.css">
+    <link rel="stylesheet" href="../../Css/form.css">
+    <link rel="stylesheet" href="../../Css/errors.css">
+    <script type="application/javascript" src="../../js/validationCommon.js"></script>
+    <script type="application/javascript" src="../../js/validationClientForm.js"></script>
+    <title>Client Add</title>
+</head>
+<body>
+<header>
+    <h1>CineGO</h1>
+    <img src="../../Images/CompanyLogo.png" width="150" height="100" alt="CompanyLogo">
+</header>
+<nav>
+    <ul>
+        <li><a href="../../Index.html">Strona Główna</a></li>
+        <li><a href="../Movie/MovieList.html">Filmy</a></li>
+        <li><a href="../Store/StoreList.html">Zawartość Zamówień</a></li>
+        <li><a href="ClientList.html" class="active">Klienci</a></li>
+        <li><a href="../Order/OrderList.html">Zamówienia</a></li>
+    </ul>
+</nav>
+<main>
+    <h2>Dodawanie nowego klienta</h2>
+    <form action="ClientList.html" class="form" novalidate onsubmit="return validateClientForm();">
+
+        <label for="name">Imie: <span class="symbol-required">*</span></label>
+        <input type="text" name="name" id="name" required/>
+        <span id="errorName" class="errors-text"></span>
+
+        <label for="lastName">Nazwisko: <span class="symbol-required">*</span></label>
+        <input type="text" name="lastName" id="lastName" required/>
+        <span id="errorLastName" class="errors-text"></span>
+
+        <label for="postCode">Kod Pocztowy: <span class="symbol-required">*</span></label>
+        <input type="text" name="postCode" id="postCode" required/>
+        <span id="errorPostCode" class="errors-text"></span>
+
+        <label for="phone">Tel: </label>
+        <input type="tel" name="phone" id="phone"/>
+        <span id="errorPhone" class="errors-text"></span>
+
+        <div class="form-buttons">
+            <p id="errorSummary" class="errors-text"></p>
+            <input type="submit" value="Dodaj Klienta" class="form-button-submit"/>
+            <a href="ClientList.html" class="form-button-cancel">Anuluj</a>
+        </div>
+
+    </form>
+</main>
+<footer>Jakub,Podleśny,s20540</footer>
+
+</body>
+</html>

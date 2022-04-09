@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../Css/page.css">
+    <link rel="stylesheet" href="../../Css/list.css">
+    <link rel="stylesheet" href="../../Css/button.css">
+    <title>Client List</title>
+</head>
+<body>
+<header>
+    <h1>CineGO</h1>
+    <img src="../../Images/CompanyLogo.png" width="150" height="100" alt="CompanyLogo">
+
+</header>
+<nav>
+    <ul>
+        <li><a href="../../Index.html">Strona Główna</a></li>
+        <li><a href="../Movie/MovieList.html">Filmy</a></li>
+        <li><a href="../Store/StoreList.html">Zawartość Zamówień</a></li>
+        <li><a href="ClientList.html" class="active">Klienci</a></li>
+        <li><a href="../Order/OrderList.html">Zamówienia</a></li>
+    </ul>
+</nav>
+<main>
+    <h2>Lista Klientów</h2>
+        <table class="table-list">
+            <thead>
+            <tr>
+                <th>Imie</th>
+                <th>Nazwisko</th>
+                <th>Kod Pocztowy</th>
+                <th>Telefon</th>
+                <th>Akcje</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td data-label="Imie">Jakub</td>
+                <td data-label="Nazwisko">Matczak</td>
+                <td data-label="Kod Pocztowy">02-465</td>
+                <td data-label="Telefon">555222333</td>
+                <td data-label="Akcje">
+                    <ul class="list-actions">
+                        <li><a href="ClientDetails.html" class="list-actions-button-details">Szczegóły</a></li>
+                        <li><a href="ClientFormEdit.html" class="list-actions-button-edit">Edytuj</a></li>
+                        <li><a href="" class="list-actions-button-delete">Usuń</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="Imie">Michał</td>
+                <td data-label="Nazwisko">Polak</td>
+                <td data-label="Kod Pocztowy">06-897</td>
+                <td data-label="Telefon">668455789</td>
+                <td data-label="Akcje">
+                    <ul class="list-actions">
+                        <li><a href="ClientDetails.html" class="list-actions-button-details">Szczegóły</a></li>
+                        <li><a href="ClientFormEdit.html" class="list-actions-button-edit">Edytuj</a></li>
+                        <li><a href="" class="list-actions-button-delete">Usuń</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="Imie">Mateusz</td>
+                <td data-label="Nazwisko">Romaniuk</td>
+                <td data-label="Kod Pocztowy">03-968</td>
+                <td data-label="Telefon">654897235</td>
+                <td data-label="Akcje">
+                    <ul class="list-actions">
+                        <li><a href="ClientDetails.html" class="list-actions-button-details">Szczegóły</a></li>
+                        <li><a href="ClientFormEdit.html" class="list-actions-button-edit">Edytuj</a></li>
+                        <li><a href="" class="list-actions-button-delete">Usuń</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="Imie">Agnieszka</td>
+                <td data-label="Nazwisko">Olesiejuk</td>
+                <td data-label="Kod Pocztowy">01-467</td>
+                <td data-label="Telefon">123654789</td>
+                <td data-label="Akcje">
+                    <ul class="list-actions">
+                        <li><a href="ClientDetails.html" class="list-actions-button-details">Szczegóły</a></li>
+                        <li><a href="ClientFormEdit.html" class="list-actions-button-edit">Edytuj</a></li>
+                        <li><a href="" class="list-actions-button-delete">Usuń</a></li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    <p><a href="ClientForm.html" class="button-add">Dodaj Nowego Klienta</a></p>
+</main>
+<footer>Jakub,Podleśny,s20540</footer>
+</body>
+</html>

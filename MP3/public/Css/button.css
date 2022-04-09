@@ -1,0 +1,26 @@
+/*dodawanie, potwierdzenie*/
+.button-add {
+    background-color: #0c7c3d;
+    padding: 0.5rem 1rem; /*dopełnienie*/
+}
+
+.button-add:hover {/*podczas zmiany*/
+    background-color: #2ecc71;
+}
+
+.button-add {
+    border: none; /*brak lini granicznych w przycisku*/
+    border-radius: 15px; /* zaokrąglenie przycisku */
+    color: white; /*kolor biały*/
+    text-decoration: none; /*nie zmienia wygladu tekstu*/
+    text-align: center;/*ustawianie */
+    font-size: 0.9rem;
+}
+.form-button-members {
+    background-color: #9f6812;
+    padding: 0.5rem 1rem; /*dopełnienie*/
+}
+
+.form-button-members:hover {/*podczas zmiany*/
+    background-color: #ffa800;
+}

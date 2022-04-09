@@ -1,0 +1,21 @@
+.form input.error-input,
+.form select.error-input {
+    border: 3px solid #e74c3c;/*rozmiar styl oraz kolor*/
+}
+
+.errors-text {
+    display: block; /*wyswitlanie elemntów jeden pod drugim (wygład blokowy)*/
+    font-size: 1.1em;
+    line-height: 2.25rem;/*odstęp pomiędzy liniami*/
+    margin-top: 0.5em;
+    color: #e74c3c;
+}
+
+.errors-text,
+.symbol-required {
+    color: #c0392b;
+}
+
+.symbol-required {
+    color: #c0392b;
+}

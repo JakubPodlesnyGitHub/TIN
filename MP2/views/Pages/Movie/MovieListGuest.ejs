@@ -1,0 +1,28 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2><%= __('movie.list.pageTitle') %></h2>
+    <% if(movies.length != 0) { %>
+        <table class="table-list">
+            <thead>
+            <tr>
+                <th><%= __('movie.fields.title') %></th>
+                <th><%= __('movie.fields.movieType') %></th>
+                <th><%= __('movie.fields.director') %></th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <% for(let movie of movies) { %>
+                <tr>
+                    <td data-label="<%= __('movie.fields.title') %>"><%= movie.Title %></td>
+                    <td data-label="<%= __('movie.fields.movieType') %>"><%= movie.MovieType %></td>
+                    <td data-label="<%= __('movie.fields.director') %>"><%= movie.Director %></td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+    <% }else{ %>
+        <p class="errors-text"><%= __('movie.list.noData') %></p>
+    <% } %>
+</main>
+<%- include('../../fragments/footer.ejs') %>

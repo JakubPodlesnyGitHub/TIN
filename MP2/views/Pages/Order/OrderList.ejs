@@ -1,0 +1,49 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2><%= __('order.list.pageTitle') %></h2>
+    <% if(orders.length != 0) { %>
+        <table class="table-list">
+            <thead>
+            <tr>
+                <th><%= __('order.fields.orderCode') %></th>
+                <th><%= __('myClient.fields.firstName') %></th>
+                <th><%= __('myClient.fields.lastName') %></th>
+                <th><%= __('order.fields.orderDate') %></th>
+                <th><%= __('order.fields.deliveryCost') %></th>
+                <th><%= __('list.actions.title') %></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for(let order of orders) { %>
+                <% if((loggedUser.role.RoleName == 'Client' && order.clients.IdClient == loggedUser.IdClient) || loggedUser.role.RoleName == 'Admin') { %>
+                    <tr>
+                        <td data-label="<%= __('order.fields.orderCode') %>"><%= order.OrderCode %></td>
+                        <td data-label="<%= __('myClient.fields.firstName') %>"><%= order.clients.FirstName %></td>
+                        <td data-label="<%= __('myClient.fields.lastName') %>"><%= order.clients.LastName %></td>
+                        <td data-label="<%= __('order.fields.orderDate') %>"><%= order.OrderDate.toISOString().split('T')[0] %></td>
+                        <td data-label="<%= __('order.fields.deliveryCost') %>"><%= order.DeliveryCost %></td>
+                        <td data-label="<%= __('list.actions.title') %>">
+                            <ul class="list-actions">
+                                <li><a href="/orders/details/<%= order.IdOrder %>"
+                                       class="list-actions-button-details"><%= __('list.actions.details') %></a>
+                                </li>
+                                <li><a href="/orders/edit/<%= order.IdOrder %>"
+                                       class="list-actions-button-edit"><%= __('list.actions.edit') %></a>
+                                </li>
+                                <% if(loggedUser.role.RoleName == 'Admin') { %>
+                                    <li><a href="/orders/delete/<%= order.IdOrder %>"
+                                           class="list-actions-button-delete"><%= __('list.actions.delete') %></a></li>
+                                <% } %>
+                            </ul>
+                        </td>
+                    </tr>
+                <% } %>
+            <% } %>
+            </tbody>
+        </table>
+    <% }else{ %>
+        <p class="errors-text"><%= __('order.list.noData') %></p>
+    <% } %>
+    <p><a href="/orders/add" class="button-add"><%= __('order.list.addNew') %></a></p>
+</main>
+<%- include('../../fragments/footer.ejs') %>

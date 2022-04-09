@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Css/page.css">
+    <link rel="stylesheet" href="/Css/list.css">
+    <link rel="stylesheet" href="/Css/form.css">
+    <link rel="stylesheet" href="/Css/errors.css">
+    <link rel="stylesheet" href="/Css/button.css">
+    <script type="application/javascript" src="/js/validationCommon.js"></script>
+    <title>CineGO Page</title>
+    <div class="flags">
+        <a href="/changeLang/pl" class="<%= lang == 'pl' ? 'activeFlag' : '' %>"><img id="plFlag" src="../../Images/pl.png"
+                                                                                  width="60" height="50" ></a>
+        <a href="/changeLang/en" class="<%= lang == 'en' ? 'activeFlag' : '' %>"><img id="enFlag" src="../../Images/en.png"
+                                                                                  width="60" height="50" ></a>
+        <a href="/changeLang/de" class="<%= lang == 'de' ? 'activeFlag' : '' %>"><img id="deFlag" src="../../Images/de.png" width="60"
+                                                                                  height="50"></a>
+    </div>
+
+    <%-include('logInForm.ejs')%>
+</head>
+<body>
+<header>
+    <h1>CineGO</h1>
+    <img src="../../Images/CompanyLogo.png" width="150" height="100" alt="CompanyLogo">
+</header>
+<nav>
+    <ul>
+        <li><a href="/" class="<%= navLocation == 'main' ? 'active' : '' %>"><%= __('nav.main-page')%></a></li>
+        <% if(loggedUser) { %>
+            <li><a href="/movies" class="<%= navLocation == 'movies' ? 'active' : '' %>"><%= __('nav.movies')%></a></li>
+            <li><a href="/store" class="<%= navLocation == 'store' ? 'active' : '' %>"><%= __('nav.store')%></a></li>
+            <li><a href="/clients" class="<%= navLocation == 'clients' ? 'active' : '' %>"><%= __('nav.clients')%></a></li>
+            <li><a href="/orders" class="<%= navLocation == 'orders' ? 'active' : '' %>"><%= __('nav.orders')%></a></li>
+            <li><a href="/groups" class="<%= navLocation == 'group' ? 'active' : '' %>"><%= __('nav.group')%></a></li>
+            <li><a href="/memberships" class="<%= navLocation == 'membership' ? 'active' : '' %>"><%= __('nav.memberShip')%></a></li>
+        <% } else { %>
+            <li><a href="/movies/guestSide" class="<%= navLocation == 'movies' ? 'active' : '' %>"><%= __('nav.movies')%></a></li>
+        <% } %>
+    </ul>
+</nav>

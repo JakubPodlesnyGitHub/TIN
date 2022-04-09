@@ -1,0 +1,44 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2><%= __('memberShip.list.title') %></h2>
+    <% if(memberships.length != 0) { %>
+        <table class="table-list">
+            <thead>
+            <tr>
+                <th><%= __('memberShip.fields.idGroup') %></th>
+                <th><%= __('memberShip.fields.idClient') %></th>
+                <th><%= __('memberShip.fields.joinDate') %></th>
+                <th><%= __('memberShip.fields.clientNick') %></th>
+                <th><%= __('list.actions.title') %></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for(let membership of memberships) { %>
+                <% if((loggedUser.role.RoleName == 'Client' && membership.Clients.IdClient == loggedUser.IdClient) || loggedUser.role.RoleName == 'Admin') { %>
+                    <tr>
+                        <td data-label="<%= __('memberShip.fields.idGroup') %>"><%= membership.Groups.GroupName %></td>
+                        <td data-label="<%= __('memberShip.fields.idClient') %>"><%= membership.Clients.FirstName + ' ' + membership.Clients.LastName %></td>
+                        <td data-label="<%= __('memberShip.fields.joinDate') %>"><%= membership.JoinDate.toISOString().split('T')[0] %></td>
+                        <td data-label="<%= __('memberShip.fields.clientNick') %>"><%= membership.ClientNick %></td>
+                        <td data-label="<%= __('list.actions.title') %>">
+                            <ul class="list-actions">
+                                <li><a href="/memberships/details/<%= membership.IdMemberShip %>"
+                                       class="list-actions-button-details"><%= __('list.actions.details') %></a></li>
+                                <li><a href="/memberships/edit/<%= membership.IdMemberShip %>"
+                                       class="list-actions-button-edit"><%= __('list.actions.edit') %></a>
+                                </li>
+                                <li><a href="/memberships/delete/<%= membership.IdMemberShip %>"
+                                       class="list-actions-button-delete"><%= __('list.actions.delete') %></a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                <% } %>
+            <% } %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p class="errors-text"><%= __('memberShip.list.noData') %></p>
+    <% } %>
+    <p><a href="/memberships/add" class="button-add"><%= __('memberShip.list.addNew') %></a></p>
+</main>
+<%- include('../../fragments/footer.ejs') %>

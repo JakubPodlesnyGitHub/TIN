@@ -1,0 +1,241 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <script type="application/javascript" src="/js/validationStoreForm.js"></script>
+    <h2><%= pageTitle %></h2>
+    <!-- onsubmit="return validateStoreForm();"-->
+    <% if (formMode == 'createNew' || formMode == 'edit') { %>
+        <form action="<%= formAction %>" method="post" class="form" novalidate >
+            <input type="hidden" name="IdStore" value="<%= store.IdStore %>">
+            <% if(loggedUser.role.RoleName == 'Admin') { %>
+                <label for="IdOrder">
+                    <%= __('store.fields.idOrder') %>: <span class="symbol-required">*</span></label>
+                <select name="IdOrder"
+                        class="<%= validationErrors.find(e => e.path.includes('IdOrder')) ? 'error-input' : '' %>"
+                        id="IdOrder"
+                        required>
+                    <option value="">--<%= __('store.form.add.orderChoice') %>--</option>
+                    <% for(let i = 0; i < allOrders.length; i++) { let or = allOrders[i] %>
+                    <option value="<%= or.IdOrder %>" <%= (validateError) ? (store.IdOrder-1 == i ? 'selected' : '') :
+                            ((store.IdStore && or.IdOrder.toString() == store.Orders.IdOrder.toString()) ? 'selected' : '') %> ><%= or.OrderCode %></option>
+                    <% } %>
+                </select>
+                <span id="errorIdOrder" class="errors-text">
+                    <% if (validationErrors.find(e => e.path.includes('IdOrder'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('IdOrder')).message %>
+                    <% } %>
+                </span>
+            <% } else {%>
+                <label for="IdOrder">
+                    <%= __('store.fields.idOrder') %> : <span class="symbol-required">*</span></label>
+                <select name="IdOrder"
+                        class="<%= validationErrors.find(e => e.path.includes('IdOrder')) ? 'error-input' : '' %>"
+                        id="IdOrder"
+                        required>
+                    <option value="">--<%= __('store.form.add.orderChoice') %>--</option>
+                    <% for(let i = 0; i < loggedUser.orders.length; i++) { let or = loggedUser.orders[i] %>
+                    <option value="<%= or.IdOrder %>"  <%= (validateError) ? (store.IdOrder-1 == i ? 'selected' : '') :
+                            ((store.IdStore && or.IdOrder.toString() == store.Orders.IdOrder.toString()) ? 'selected' : '') %>><%= or.OrderCode %></option>
+                    <% } %>
+                </select>
+                <span id="errorIdOrder" class="errors-text">
+                    <% if (validationErrors.find(e => e.path.includes('IdOrder'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('IdOrder')).message %>
+                    <% } %>
+                </span>
+            <% }%>
+            <label for="IdMovie"><%= __('store.fields.idMovie') %> : <span class="symbol-required">*</span></label>
+            <select name="IdMovie"
+                    class="<%= validationErrors.find(e => e.path.includes('Movie')) ? 'error-input' : '' %>"
+                    id="IdMovie"
+                    required>
+                <option value="">--<%= __('store.form.add.movieChoice') %>--</option>
+                <% for(let i = 0; i < allMovies.length; i++) { let mov = allMovies[i] %>
+                <option value="<%= mov.IdMovie %>"  <%= (validateError) ? (store.IdMovie-1 == i ? 'selected' : '') :
+                ((store.IdStore && mov.IdMovie.toString() == store.Movies.IdMovie.toString()) ? 'selected' : '') %> ><%= mov.Title %></option>
+                <% } %>
+            </select>
+            <span id="errorIdMovie" class="errors-text">
+                <% if (validationErrors.find(e => e.path.includes('IdMovie'))) { %>
+                    <%= validationErrors.find(e => e.path.includes('IdMovie')).message %>
+                <% } %>
+            </span>
+
+            <label for="Cost"><%= __('store.fields.cost') %>:<span class="symbol-required">*</span></label>
+            <input type="number"
+                   class="<%= validationErrors.find(e => e.path.includes('Cost')) ? 'error-input' : '' %>" name="Cost"
+                   id="Cost" value="<%= store.Cost %>" required/>
+            <span id="errorCost" class="errors-text">
+                <% if (validationErrors.find(e => e.path.includes('Cost'))) { %>
+                    <%= validationErrors.find(e => e.path.includes('Cost')).message %>
+                <% } %>
+            </span>
+
+            <label for="Amount">
+                <%= __('store.fields.amount') %>: <span class="symbol-required">*</span></label>
+            <input type="number"
+                   class="<%= validationErrors.find(e => e.path.includes('Amount')) ? 'error-input' : '' %>"
+                   name="Amount" id="Amount" value="<%= store.Amount %>" required/>
+            <span id="errorAmount" class="errors-text">
+                <% if (validationErrors.find(e => e.path.includes('Amount'))) { %>
+                    <%= validationErrors.find(e => e.path.includes('Amount')).message %>
+                <% } %>
+            </span>
+
+            <%- include('../../fragments/validationErrors') %>
+
+            <div class="form-buttons">
+                <p id="errorSummary" class="errors-text"></p>
+                <input type="submit" class="form-button-submit" value="<%= btnLabel %>"/>
+                <a href="/store" class="form-button-cancel"><%= __('form.actions.cancel') %></a>
+            </div>
+
+        </form>
+    <% } else { %>
+
+        <h2><%= pageTitleMovie %></h2>
+
+        <form class="form">
+
+            <input type="hidden" name="IdStore" value="<%= store.IdStore %>">
+
+            <label for="movieName"><%= __('movie.fields.title') %>: <span class="symbol-required">*</span></label>
+            <select name="movieName" id="movieName" required <%= (formMode == 'showDetails') ? 'disabled' : '' %>>
+                <option value="">--<%= __('store.form.add.movieChoice') %>--</option>
+                <% for(let i = 0; i < allMovies.length; i++) { let mov = allMovies[i] %>
+                <option value="<%= mov.IdMovie %>" <%= (store.IdStore && mov.IdMovie.toString() == store.Movies.IdMovie.toString()) ? 'selected' : '' %>><%= mov.Title %></option>
+                <% } %>
+            </select>
+            <span id="errorMovieName"></span>
+
+            <label for="movieType"><%= __('movie.fields.movieType') %>: <span
+                        class="symbol-required">*</span></label>
+            <input type="text" name="movieType" id="movieType"
+                   value="<%= store.Movies.MovieType %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorMovieType"></span>
+
+            <label for="director"><%= __('movie.fields.director') %>: <span
+                        class="symbol-required">*</span></label>
+            <input type="text" name="director" id="director"
+                   value="<%= store.Movies.Director %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorDirector"></span>
+
+            <label for="releaseDate"><%= __('movie.fields.releaseDate') %>: <span
+                        class="symbol-required">*</span></label>
+            <input type="date" name="releaseDate" id="releaseDate"
+                   value="<%= store.Movies.ReleaseDate.toISOString().split('T')[0] %>"
+                   required <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorReleaseDate"></span>
+
+            <label for="rate"><%= __('movie.fields.rate') %>: <span class="symbol-required">*</span></label>
+            <select name="rate" id="rate" required <%= (formMode == 'showDetails') ? 'disabled' : '' %>>
+                <option value="">--<%= __('movie.form.add.rateChoice') %>--</option>
+                <% for(let i = 1;i < 11;i++) { %>
+                    <option value="<%= i %>" <%= (store.Movies.Rate == i) ? 'selected' : '' %>><%= i %></option>
+                <% } %>
+            </select>
+            <span id="errorRate"></span>
+
+            <label for="oscar"><%= __('movie.fields.oscar') %>: </label>
+            <select name="oscar" id="oscar" <%= (formMode == 'showDetails') ? 'disabled' : '' %>>
+                <option>--<%= __('movie.form.add.oscarChoice') %>--</option>
+                <option value="1" <%= (store.Movies.Oscar == true) ? 'selected' : '' %>>TAK</option>
+                <option value="2" <%= (store.Movies.Oscar == false) ? 'selected' : '' %>>NIE</option>
+            </select>
+            <span id="errorOskar"></span>
+
+            <label for="price"><%= __('movie.fields.price') %>: <span class="symbol-required">*</span></label>
+            <input type="number" name="price" id="price" value="<%= store.Movies.Price %>"
+                   required <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorPrice"></span>
+
+            <label for="movieLength"><%= __('movie.fields.movieLength') %>: </label>
+            <input type="text" name="movieLength" id="movieLength"
+                   value="<%= store.Movies.MovieLength %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorMovieLength"></span>
+        </form>
+
+        <h2><%= pageTitleClient %></h2>
+
+        <form class="form">
+            <label for="clientName"><%= __('myClient.fields.firstName') + ' ' + __('myClient.fields.lastName') %>
+                : <span class="symbol-required">*</span></label>
+            <select name="clientName" id="clientName" required <%= (formMode == 'showDetails') ? 'disabled' : '' %>>
+                <option value="">--<%= __('order.form.add.clientChoice') %>--</option>
+                <% for(let i = 0; i < allClients.length; i++) { let c = allClients[i] %>
+                <option value="<%= c.IdClient %>" <%= (store.IdStore && c.IdClient.toString() == store.Orders.clients.IdClient.toString()) ? 'selected' : '' %>><%= c.FirstName + ' ' + c.LastName %></option>
+                <% } %>
+            </select>
+            <span id="errorName" class="errors-text"></span>
+
+            <label for="postCode"><%= __('myClient.fields.postCode') %>: <span
+                        class="symbol-required">*</span></label>
+            <input type="text" name="postCode" id="postCode"
+                   value="<%= store.Orders.clients.PostCode %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorPostCode"></span>
+
+            <label for="phone"><%= __('myClient.fields.phoneNumber') %>: </label>
+            <input type="tel" name="phone" id="phone"
+                   value="<%= store.Orders.clients.PhoneNumber %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorPhone"></span>
+
+            <label for="Login"><%= __('myClient.fields.login') %>: </label>
+            <input type="text" name="Login" id="Login"
+                   value="<%= store.Orders.clients.Login %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorLogin"></span>
+
+        </form>
+
+        <h2><%= pageTitleOrder %></h2>
+
+        <form class="form">
+            <label for="orderCode"><%= __('order.fields.orderCode') %>: <span
+                        class="symbol-required">*</span></label>
+            <select name="orderCode" id="orderCode" required <%= (formMode == 'showDetails') ? 'disabled' : '' %>>
+                <option value="">--<%= __('store.form.add.movieChoice') %>--</option>
+                <% for(let i = 0; i < allOrders.length; i++) { let or = allOrders[i] %>
+                <option value="<%= or.IdOrder %>" <%= (store.IdStore && or.IdOrder.toString() == store.Orders.IdOrder.toString()) ? 'selected' : '' %>><%= or.OrderCode %></option>
+                <% } %>
+            </select>
+            <span id="errorOrderCode" class="errors-text"></span>
+
+            <label for="orderDate"><%= __('order.fields.orderDate') %>: <span
+                        class="symbol-required">*</span></label>
+            <select name="orderDate" id="orderDate" required <%= (formMode == 'showDetails') ? 'disabled' : '' %>>
+                <option value="">--<%= __('order.form.add.dateChoice') %>--</option>
+                <% for(let i = 0; i < allOrders.length; i++) { let or = allOrders[i] %>
+                <option value="<%= or.IdOrder %>" <%= (store.IdStore && or.OrderDate.toISOString().split('T')[0] == store.Orders.OrderDate.toISOString().split('T')[0]) ? 'selected' : '' %>><%= or.OrderDate.toISOString().split('T')[0] %></option>
+                <% } %>
+            </select>
+            <span id="errorOrderDate" class="errors-text"></span>
+
+            <label for="orderCost"><%= __('order.fields.deliveryCost') %>: <span
+                        class="symbol-required">*</span></label>
+            <input type="number" name="orderCost" id="orderCost"
+                   value="<%= store.Orders.DeliveryCost %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorOrderCost"></span>
+        </form>
+
+        <h2><%= pageTitleStore %></h2>
+
+        <form class="form" method="post" class="form" novalidate onsubmit="return validateOrderForm();">
+            <label for="cost"><%= __('store.fields.cost') %>: <span class="symbol-required">*</span></label>
+            <input type="number" name="cost" id="cost"
+                   value="<%= store.Cost %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorCost"></span>
+
+            <label for="movieAmount"> <%= __('store.fields.amount') %>: <span
+                        class="symbol-required">*</span></label>
+            <input type="number" name="movieAmount" id="movieAmount"
+                   value="<%= store.Amount %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorAmount"></span>
+
+            <div class="form-buttons">
+                <a href="/store/edit/<%= store.IdStore %>"
+                   class="form-button-submit"><%= __('form.actions.edit') %></a>
+                <a class="form-button-back" href="/store"><%= __('form.actions.return') %></a>
+            </div>
+        </form>
+
+    <% } %>
+</main>
+<%- include('../../fragments/footer.ejs') %>

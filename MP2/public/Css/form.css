@@ -1,0 +1,116 @@
+.form {
+    display: grid; /*wyswietla styl grida */
+    grid-template-columns: 150px 300px 1fr; /*3 kolumny 1 na etykiety 2 na pola formularza 3 na kounikaty błedów*/
+    gap: 1rem; /*ustawia przestrzeń pomiędzy wierszami */
+}
+
+.form select,
+.form input[type="text"],
+.form input[type="number"],
+.form input[type="date"],
+.form input[type="tel"],
+.form input[type="password"] {
+    border: 2px solid #7f8c8d; /*rozmiar styl oraz kolor*/
+    color: #2c3e50;
+    border-radius: 15px; /*zaokrąglanie krawedzi*/
+    padding: 0.5rem; /*dopełnienie*/
+    width: 100%;
+}
+
+.form label {
+    display: block; /*wyświetlanie bokowo elementów*/
+    margin-top: 1rem; /*margines na górze*/
+    margin-bottom: 0.5rem; /*margines na dole*/
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+textarea {
+    overflow: auto;
+}
+
+/*Buttons*/
+.form-buttons {
+    margin-top: 2rem;
+    grid-column: 1 /span 2; /*rozszerza przyciski na cała długość kolumn*/
+}
+
+.form-button-submit,
+.form-button-cancel,
+.form-button-members{
+    width: 100%;
+}
+
+.form-button-cancel {
+    box-sizing: border-box; /*dopeblnienie i krawedzie sa zawrte w przycisku*/
+    display: block; /*wyswietlanie blokowo*/
+}
+.form-button-members {
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.form-button-submit {
+    margin-bottom: 0.5rem;
+}
+
+.form-button-back {
+    background-color: #2980b9;
+}
+
+.form-button-back:hover {
+    background-color: #4fb7ff;
+}
+
+.form-button-cancel {
+    background-color: #c0392b;
+}
+
+.form-button-cancel:hover {
+    background-color: #e74c3c;
+}
+
+.form-button-submit {
+    background-color: #0c7c3d;
+}
+
+.form-button-submit:hover {
+    background-color: #2ecc71;
+}
+
+.form-button-back {
+    padding: 0.5rem 0.75rem;
+}
+
+.form-button-submit, .form-button-cancel, .form-button-members {
+    padding: 0.5rem 1rem;
+}
+
+.form-button-submit,
+.form-button-cancel,
+.form-button-back,
+.form-button-members{
+    border: none;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+@media all and (max-width: 720px) {
+    .form {
+        grid-template-columns: 1fr; /*1 kolumna*/
+        row-gap: unset;
+    }
+
+    .form-buttons {
+        grid-column: 1 / 1;
+    }
+}

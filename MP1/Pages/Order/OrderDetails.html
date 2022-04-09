@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../Css/page.css">
+    <link rel="stylesheet" href="../../Css/form.css">
+    <link rel="stylesheet" href="../../Css/list.css">
+    <link rel="stylesheet" href="../../Css/errors.css">
+    <title>Order Details</title>
+</head>
+<body>
+<header>
+    <h1>CineGO</h1>
+    <img src="../../Images/CompanyLogo.png" width="150" height="100" alt="CompanyLogo">
+
+</header>
+<nav>
+    <ul>
+        <li><a href="../../Index.html">Strona Główna</a></li>
+        <li><a href="../Movie/MovieList.html">Filmy</a></li>
+        <li><a href="../Store/StoreList.html">Zawartość Zamówień</a></li>
+        <li><a href="../Client/ClientList.html">Klienci</a></li>
+        <li><a href="OrderList.html" class="active">Zamówienia</a></li>
+    </ul>
+</nav>
+<main>
+    <h1>Szegóły dotyczące zamówienia</h1>
+    <form action="OrderForm.html" class="form">
+
+        <label for="orderCode">Kod Zamówienia: <span class="symbol-required">*</span></label>
+        <input type="number" name="orderCode" id="orderCode" value="1111" required disabled/>
+        <span id="errorOrderCode" class="errors-text"></span>
+
+        <label for="clientName">Imie i Nazwisko Klienta: <span class="symbol-required">*</span></label>
+        <select name="clientName" id="clientName" required disabled>
+            <option value="">--Wybierz Imie i Nazwisko klienta--</option>
+            <option value="1" selected>Jakub Matczak</option>
+            <option value="2">Michał Polak</option>
+            <option value="3">Mateusz Romaniuk</option>
+        </select>
+        <span id="errorName"></span>
+
+        <label for="orderDate">Data Zamówienia: <span class="symbol-required">*</span></label>
+        <input type="date" name="orderDate" id="orderDate" value="2021-02-12" disabled/>
+        <span id="errorOrderDate"></span>
+
+        <label for="orderCost">Koszt Dostawy: <span class="symbol-required">*</span></label>
+        <input type="number" name="orderCost" id="orderCost" value="200" disabled/>
+        <span id="errorOrderCost"></span>
+
+        <div class="form-buttons">
+            <input type="submit" value="Edytuj" class="form-button-submit"/>
+        </div>
+    </form>
+    <h2>Szczegóły dotyczące danego zamówienia</h2>
+    <table class="table-list">
+        <thead>
+        <tr>
+            <th>Tytuł</th>
+            <th>Gatunek Filmowy</th>
+            <th>Reżyser</th>
+            <th>Ilość</th>
+            <th>Koszt zamówienia</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Tytuł">Władca Pierścieni</td>
+            <td data-label="Gatunek Filmowy">Fantasy</td>
+            <td data-label="Reżyser">Peter Jackson</td>
+            <td data-label="Ilość">2</td>
+            <td data-label="Koszt zamówienia">100</td>
+        </tr>
+        <tr>
+            <td data-label="Tytuł">Pewnego razu... w Hollywood</td>
+            <td data-label="Gatunek Filmowy">Komediodramat</td>
+            <td data-label="Reżyser">Quentin Tarantino</td>
+            <td data-label="Ilość">1</td>
+            <td data-label="Koszt zamówienia">40</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="form-buttons">
+        <a class="form-button-back" href="OrderList.html">Powrót</a>
+    </div>
+</main>
+<footer>Jakub,Podleśny,s20540</footer>
+
+</body>
+</html>

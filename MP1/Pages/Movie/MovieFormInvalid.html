@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../Css/page.css">
+    <link rel="stylesheet" href="../../Css/form.css">
+    <link rel="stylesheet" href="../../Css/errors.css">
+    <title>Movie Add Invalid</title>
+</head>
+<body>
+<header>
+    <h1>CineGO</h1>
+    <img src="../../Images/CompanyLogo.png" width="150" height="100" alt="CompanyLogo">
+
+</header>
+<nav>
+    <ul>
+        <li><a href="../../Index.html">Strona Główna</a></li>
+        <li><a href="MovieList.html" class="active">Filmy</a></li>
+        <li><a href="../Store/StoreList.html">Zawartość Zamówień</a></li>
+        <li><a href="../Client/ClientList.html">Klienci</a></li>
+        <li><a href="../Order/OrderList.html">Zamówienia</a></li>
+    </ul>
+</nav>
+<main>
+    <h2>Dodawanie nowego filmu</h2>
+    <form action="MovieList.html" class="form">
+
+        <label for="title">Tytuł: <span class="symbol-required">*</span></label>
+        <input type="text" name="title" id="title" class="error-input" required/>
+        <span id="errorTitle" class="errors-text"> Pole [Tytuł] jest wymagane</span>
+
+        <label for="movieType">Gatunek Filmu: <span class="symbol-required">*</span></label>
+        <input type="text" name="movieType" id="movieType" class="error-input" required/>
+        <span id="errorMovieType" class="errors-text">Pole [Gatunek Filmu] jest wymagane</span>
+
+        <label for="director">Reżyser: <span class="symbol-required">*</span></label>
+        <input type="text" name="director" id="director" class="error-input" required/>
+        <span id="errorDirector" class="errors-text">Pole [Reżyser] jest wymagane</span>
+
+        <label for="rate">Ocena: <span class="symbol-required">*</span></label>
+        <select name="rate" id="rate" class="error-input" required>
+            <option value="">--Wybierz ocene--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <span id="errorRate" class="errors-text">Pole [Ocena] jest wymagane</span>
+
+        <label for="releaseDate">Data Premiery: <span class="symbol-required">*</span></label>
+        <input type="date" name="releaseDate" id="releaseDate" class="error-input" required/>
+        <span id="errorReleaseDate" class="errors-text">Pole [Data Premiery] jest wymagane</span>
+
+        <label for="oscar">Oskar: </label>
+        <select name="oscar" id="oscar" required>
+            <option value="">--Czy film posiada oscara--</option>
+            <option value="1">TAK</option>
+            <option value="2">NIE</option>
+        </select>
+        <span id="errorOskar"></span>
+
+        <label for="price">Cena: <span class="symbol-required">*</span></label>
+        <input type="number" name="price" id="price" class="error-input" required/>
+        <span id="errorPrice" class="errors-text">Pole [Cena] jest wymagane</span>
+
+        <label for="movieLength">Długość Filmu: </label>
+        <input type="number" name="movieLength" id="movieLength"/>
+        <span id="errorMovieLength"></span>
+
+        <div class="form-buttons">
+            <input type="submit" value="Dodaj Film" class="form-button-submit"/>
+            <a href="MovieList.html" class="form-button-cancel">Anuluj</a>
+        </div>
+
+    </form>
+</main>
+<footer>Jakub,Podleśny,s20540</footer>
+
+</body>
+</html>

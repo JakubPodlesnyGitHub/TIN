@@ -1,0 +1,48 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2><%= __('myClient.list.pageTitle') %></h2>
+    <% if(clients.length != 0) { %>
+        <table class="table-list">
+            <thead>
+            <tr>
+                <th><%= __('myClient.fields.firstName') %></th>
+                <th><%= __('myClient.fields.lastName') %></th>
+                <th><%= __('myClient.fields.postCode') %></th>
+                <th><%= __('myClient.fields.phoneNumber') %></th>
+                <th><%= __('list.actions.title') %></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for(let client of clients) { %>
+                <% if((loggedUser.role.RoleName == 'Client' && client.IdClient == loggedUser.IdClient) || loggedUser.role.RoleName == 'Admin') { %>
+                    <tr>
+                        <td data-label="<%= __('myClient.fields.firstName') %>"><%= client.FirstName %></td>
+                        <td data-label="<%= __('myClient.fields.lastName') %>"><%= client.LastName %></td>
+                        <td data-label="<%= __('myClient.fields.postCode') %>"><%= client.PostCode %></td>
+                        <td data-label="<%= __('myClient.fields.phoneNumber') %>"><%= client.PhoneNumber %></td>
+                        <td data-label="<%= __('list.actions.title') %>">
+                            <ul class="list-actions">
+                                <li><a href="/clients/details/<%= client.IdClient %>"
+                                       class="list-actions-button-details"><%= __('list.actions.details') %></a>
+                                </li>
+                                <li><a href="/clients/edit/<%= client.IdClient %>"
+                                       class="list-actions-button-edit"><%= __('list.actions.edit') %></a></li>
+                                <% if (loggedUser.role.RoleName == 'Admin') { %>
+                                    <li><a href="/clients/delete/<%= client.IdClient %>"
+                                           class="list-actions-button-delete"><%= __('list.actions.delete') %></a></li>
+                                <% } %>
+                            </ul>
+                        </td>
+                    </tr>
+                <% } %>
+            <% } %>
+            </tbody>
+        </table>
+    <% }else{ %>
+        <p class="errors-text"><%= __('myClient.list.noData') %>></p>
+    <% } %>
+    <% if(loggedUser.role.RoleName == 'Admin') { %>
+        <p><a href="/clients/add" class="button-add"><%= __('myClient.list.addNew') %></a></p>
+    <% } %>
+</main>
+<%- include('../../fragments/footer.ejs') %>

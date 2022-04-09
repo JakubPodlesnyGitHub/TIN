@@ -1,0 +1,44 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2><%= __('group.list.pageTitle') %></h2>
+    <% if(groups.length != 0) { %>
+        <table class="table-list">
+            <thead>
+            <tr>
+                <th><%= __('group.fields.groupName') %></th>
+                <th><%= __('group.fields.creationDate') %></th>
+                <th><%= __('group.fields.description') %></th>
+                <th><%= __('list.actions.title') %></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for(let group of groups) { %>
+                <% if(loggedUser.role.RoleName == 'Client' || loggedUser.role.RoleName == 'Admin') { %>
+                    <tr>
+                        <td data-label="<%= __('group.fields.groupName') %>"><%= group.GroupName %></td>
+                        <td data-label="<%= __('group.fields.creationDate') %>"><%= group.CreationDate.toISOString().split('T')[0] %></td>
+                        <td data-label="<%= __('group.fields.description') %>"><%= group.Description %></td>
+                        <td data-label="<%= __('list.actions.title') %>">
+                            <ul class="list-actions">
+                                <li><a href="/groups/details/<%= group.IdGroup %>"
+                                       class="list-actions-button-details"><%= __('list.actions.details') %></a></li>
+                                <% if((loggedUser.role.RoleName == 'Client' && group.GroupOwner == loggedUser.IdClient) || loggedUser.role.RoleName == 'Admin') { %>
+                                    <li><a href="/groups/edit/<%= group.IdGroup %>"
+                                           class="list-actions-button-edit"><%= __('list.actions.edit') %></a>
+                                    </li>
+                                    <li><a href="/groups/delete/<%= group.IdGroup %>"
+                                           class="list-actions-button-delete"><%= __('list.actions.delete') %></a></li>
+                                <% } %>
+                            </ul>
+                        </td>
+                    </tr>
+                <% } %>
+            <% } %>
+            </tbody>
+        </table>
+    <% }else { %>
+        <p class="errors-text"><%= __('group.list.noData') %></p>
+    <% } %>
+    <p><a href="/groups/add" class="button-add"><%= __('group.list.addNew') %></a></p>
+</main>
+<%- include('../../fragments/footer.ejs') %>

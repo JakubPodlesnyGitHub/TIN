@@ -1,0 +1,39 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2><%= __('group.form.groupMembership.pageTitle') %> <%= group.GroupName %></h2>
+    <% if(group.Membership.length != 1) { %>
+        <table class="table-list">
+            <thead>
+            <tr>
+                <th><%= __('memberShip.fields.idClient') %></th>
+                <th><%= __('memberShip.fields.joinDate') %></th>
+                <th><%= __('memberShip.fields.clientNick') %></th>
+                <th><%= __('list.actions.title') %></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for(let membership of group.Membership) { %>
+                <% if((loggedUser.role.RoleName == 'Client' && membership.Clients.IdClient != group.GroupOwner) || loggedUser.role.RoleName == 'Admin') { %>
+                    <tr>
+                        <td data-label="<%= __('memberShip.fields.idClient') %>"><a
+                                    href="/clients/details/<%= membership.Clients.IdClient %>"><%= membership.Clients.FirstName + ' ' + membership.Clients.LastName %></a>
+                        </td>
+                        <td data-label="<%= __('memberShip.fields.joinDate') %>"><%= membership.JoinDate.toISOString().split('T')[0] %></td>
+                        <td data-label="<%= __('memberShip.fields.clientNick') %>"><%= membership.ClientNick %></td>
+                        <td data-label="<%= __('list.actions.title') %>">
+                            <ul class="list-actions">
+                                <li><a href="/groups/delete/<%= group.IdGroup%>/<%= membership.IdMemberShip%>"
+                                       class="list-actions-button-delete"><%= __('list.actions.delete') %></a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                <% } %>
+            <% } %>
+            </tbody>
+        </table>
+    <% }else { %>
+        <p class="errors-text"><%= __('group.list.noData') %></p>
+    <% } %>
+    <p><a href="/groups" class="form-button-back"><%= __('form.actions.return') %></a></p>
+</main>
+<%- include('../../fragments/footer.ejs') %>

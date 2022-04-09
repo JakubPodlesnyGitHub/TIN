@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../Css/page.css">
+    <link rel="stylesheet" href="../../Css/list.css">
+    <link rel="stylesheet" href="../../Css/form.css">
+    <link rel="stylesheet" href="../../Css/errors.css">
+    <title>Movie Details</title>
+</head>
+<body>
+<header>
+    <h1>CineGO</h1>
+    <img src="../../Images/CompanyLogo.png" width="150" height="100" alt="CompanyLogo">
+</header>
+<nav>
+    <ul>
+        <li><a href="../../Index.html">Strona Główna</a></li>
+        <li><a href="MovieList.html" class="active">Filmy</a></li>
+        <li><a href="../Store/StoreList.html">Zawartość Zamówień</a></li>
+        <li><a href="../Client/ClientList.html">Klienci</a></li>
+        <li><a href="../Order/OrderList.html">Zamówienia</a></li>
+    </ul>
+</nav>
+<main>
+
+    <h1>Szegóły dotyczące filmu</h1>
+
+    <form action="MovieForm.html" class="form">
+        <label for="title">Tytuł: <span class="symbol-required">*</span></label>
+        <input type="text" name="title" id="title" value="Władca Pierścieni" disabled/>
+        <span id="errorTitle"></span>
+
+        <label for="movieType">Gatunek Filmu: <span class="symbol-required">*</span></label>
+        <input type="text" name="movieType" id="movieType" value="Fantasy" disabled/>
+        <span id="errorMovieType"></span>
+
+        <label for="director">Reżyser: <span class="symbol-required">*</span></label>
+        <input type="text" name="director" id="director" value="Peter Jackson" disabled/>
+        <span id="errorDirector"></span>
+
+        <label for="rate">Ocena: <span class="symbol-required">*</span></label>
+        <select name="rate" id="rate" required disabled>
+            <option value="">--Wybierz ocene--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9" selected>9</option>
+            <option value="10">10</option>
+        </select>
+        <span id="errorRate"></span>
+
+        <label for="releaseDate">Data Premiery: <span class="symbol-required">*</span></label>
+        <input type="date" name="releaseDate" id="releaseDate" value="2002-02-18" required disabled/>
+        <span id="errorReleaseDate"></span>
+
+        <label for="oscar">Oskar: </label>
+        <select name="oscar" id="oscar" disabled>
+            <option>--Czy film posiada oscara--</option>
+            <option value="1" selected>TAK</option>
+            <option value="2">NIE</option>
+        </select>
+        <span id="errorOskar"></span>
+
+        <label for="price">Cena: <span class="symbol-required">*</span></label>
+        <input type="number" name="price" id="price" value="30" required disabled/>
+        <span id="errorPrice"></span>
+
+        <label for="movieLength">Długość Filmu: </label>
+        <input type="text" name="movieLength" id="movieLength" value="152" disabled/>
+        <span id="errorMovieLength"></span>
+
+        <div class="form-buttons">
+            <input type="submit" value="Edytuj" class="form-button-submit"/>
+        </div>
+
+    </form>
+
+    <h2>Szczegóły stanu danego flmu</h2>
+    <table class="table-list">
+        <thead>
+        <tr>
+            <th>Imie Klienta</th>
+            <th>Nazwisko Klienta</th>
+            <th>Data złożenia zamówienia</th>
+            <th>Ilość</th>
+            <th>Koszt zamówienia</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Imie Klienta">Jakub</td>
+            <td data-label="Nazwisko Klienta">Matczak</td>
+            <td data-label="Data złożenia zamówienia">12.06.2020</td>
+            <td data-label="Ilość">2</td>
+            <td data-label="Koszt zamówienia">80</td>
+        </tr>
+        <tr>
+            <td data-label="Imie Klienta">Michał</td>
+            <td data-label="Nazwisko Klienta">Polak</td>
+            <td data-label="Data złożenia zamówienia">12.06.2020</td>
+            <td data-label="Ilość">1</td>
+            <td data-label="Koszt zamówienia">50</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="form-buttons">
+        <a class="form-button-back" href="MovieList.html">Powrót</a>
+    </div>
+
+</main>
+<footer>Jakub,Podleśny,s20540</footer>
+
+</body>
+</html>

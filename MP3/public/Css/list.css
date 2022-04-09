@@ -1,0 +1,120 @@
+.table-list {
+    border-collapse: collapse; /*polaczone obramowania*/
+    color: #2c3e50;
+    width: 100%; /*na cala dlugosc*/
+    text-align: center;
+}
+
+.table-list, .table-list th, .table-list td {
+    border: 2px solid #bdc3c7;
+}
+
+.table-list, .table-list td {
+    padding: 0.5rem;
+}
+
+.table-list th, .table-list tbody tr:nth-child(even) {
+    background-color: #D5F3FE;
+}
+
+.list-actions {
+    margin: 0;
+    text-align: center;
+    list-style-type: none; /*brak znaków w liscie */
+    padding: 0;
+}
+
+.list-actions li {
+    display: inline-block;
+}
+
+.list-actions-button-details, .list-actions-button-edit, .list-actions-button-delete {
+    display: inline-block;
+    width: 75px;
+    padding: 0.25rem 0.5rem;
+}
+
+.list-actions-button-details, .list-actions-button-edit {
+    margin-right: 2px; /*odalenie przycisków*/
+}
+
+/*sczegóły*/
+.list-actions-button-details, .form-button-back {
+    background-color: #2980b9;
+}
+
+.list-actions-button-details:hover, .form-button-back:hover {
+    background-color: #4fb7ff;
+}
+
+/*edycja*/
+.list-actions-button-edit {
+    background-color: #f39c12;
+}
+
+.list-actions-button-edit:hover {
+    background-color: #f1c40f;
+}
+
+/*usuwanie*/
+.list-actions-button-delete, .form-button-cancel {
+    background-color: #c0392b;
+}
+
+.list-actions-button-delete:hover, .form-button-cancel:hover {
+    background-color: #e74c3c;
+}
+
+.list-actions-button-details,
+.list-actions-button-edit,
+.list-actions-button-delete {
+    border: none;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/*smartfony i tablety*/
+@media all and (max-width: 720px) {
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    .table-list {
+        border: hidden;
+    }
+
+    .list-actions-button-details,
+    .list-actions-button-edit,
+    .list-actions-button-delete {
+        margin: unset;
+    }
+
+    .list-actions li {
+        display: flex; /*ustawia na styl flex*/
+        margin-bottom: 3px; /*ustawia dolny margines na 3px*/
+        align-items: flex-end; /*przesuwa na koniec element*/
+        flex-direction: column /*ustawia elemnt w kolumne*/;
+    }
+
+    thead {
+        display: none; /*nie wyswietla nagłówków kolmun*/
+    }
+
+    td {
+        position: relative;
+        text-align: right; /* przesuwa na prawo*/
+        overflow: auto; /*jesli jest za dlugie to automatycznie chowa to*/
+    }
+
+    td:before {
+        content: attr(data-label); /*okresla co jest wyswietlane w tych elementach a "attr" odwołuje sie do atrybutu datalabel i jego zawartosci*/
+        position: absolute;
+        text-align: left;
+        left: 6px; /*przesuwa w lewo o 6px*/
+        overflow: auto;
+    }
+}

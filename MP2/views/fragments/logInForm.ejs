@@ -1,0 +1,22 @@
+<% if(!loggedUser) { %>
+    <div class="login" id="login">
+        <h5><%= __('authorization.title')%></h5>
+        <form method="post" action="/login" class="form" novalidate>
+            <label for="logLogin"> <%=__('authorization.login')%>: </label>
+            <input type="text" id="logLogin" placeholder="np. Jakub1234" name="Login"/>
+            <span id="loginErrors"></span>
+
+            <label for="logPassword"> <%= __('authorization.logPassword')%>: </label>
+            <input type="password" id="logPassword" name="Password"/>
+            <span id="loginErrors"></span>
+
+            <input type="submit" class="form-button-submit" value="<%= __('authorization.logIn')%>">
+            <span id="loginErrors" class="errors-text"> <%= loginError ? loginError : '' %></span>
+        </form>
+    </div>
+<% } else { %>
+    <span>
+            <h5><%= __('authorization.logSentence')%> <%= loggedUser.FirstName + ' ' + loggedUser.LastName %> - <%= __('authorization.role')%>: <%= loggedUser.role.RoleName%> </h5>
+            <a href="/logout" class="form-button-back"><%= __('authorization.logout')%></a>
+    </span>
+<% } %>

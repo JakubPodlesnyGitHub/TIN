@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../Css/page.css">
+    <link rel="stylesheet" href="../../Css/list.css">
+    <link rel="stylesheet" href="../../Css/form.css">
+    <link rel="stylesheet" href="../../Css/errors.css">
+    <title>Client Details</title>
+</head>
+<body>
+<header>
+    <h1>CineGO</h1>
+    <img src="../../Images/CompanyLogo.png" width="150" height="100" alt="CompanyLogo">
+</header>
+<nav>
+    <ul>
+        <li><a href="../../Index.html">Strona Główna</a></li>
+        <li><a href="../Movie/MovieList.html">Filmy</a></li>
+        <li><a href="../Store/StoreList.html">Zawartość Zamówień</a></li>
+        <li><a href="ClientList.html" class="active">Klienci</a></li>
+        <li><a href="../Order/OrderList.html">Zamówienia</a></li>
+    </ul>
+</nav>
+<main>
+    <h1>Szegóły dotyczące klienta </h1>
+    <form action="ClientForm.html" class="form">
+        <label for="name">Imie: <span class="symbol-required">*</span></label>
+        <input type="text" name="name" id="name" value="Jakub" disabled/>
+        <span id="errorName"></span>
+
+        <label for="lastName">Nazwisko: <span class="symbol-required">*</span></label>
+        <input type="text" name="lastName" id="lastName" value="Matczak" disabled/>
+        <span id="errorLastName"></span>
+
+        <label for="postCode">Kod Pocztowy: <span class="symbol-required">*</span></label>
+        <input type="text" name="postCode" id="postCode" value="02-456" disabled/>
+        <span id="errorPostCode"></span>
+
+        <label for="phone">Tel: </label>
+        <input type="tel" name="phone" id="phone" value="555222333" disabled/>
+        <span id="errorPhone"></span>
+
+        <div class="form-buttons">
+            <input type="submit" value="Edytuj" class="form-button-submit"/>
+        </div>
+    </form>
+    <h2>Szczegóły dotyczących danych danego klienta</h2>
+    <table class="table-list">
+        <thead>
+        <tr>
+            <th>IdOrder</th>
+            <th>Data złożenia zamówienia</th>
+            <th>Koszt dostawy</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="IdOrder">1</td>
+            <td data-label="Data złożenia zamówienia">12.12.2020</td>
+            <td data-label="Koszt dostawy">200</td>
+        </tr>
+        <tr>
+            <td data-label="IdOrder">2</td>
+            <td data-label="Data złożenia zamówienia">23.05.2021</td>
+            <td data-label="Koszt dostawy">50</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="form-buttons">
+        <a class="form-button-back" href="ClientList.html">Powrót</a>
+    </div>
+</main>
+<footer>Jakub,Podleśny,s20540</footer>
+</body>
+</html>

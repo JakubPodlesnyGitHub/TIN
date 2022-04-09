@@ -1,0 +1,146 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <script type="application/javascript" src="/js/validationMembershipForm.js"></script>
+    <h2><%= pageTitle %></h2>
+    <!-- onsubmit="return validationMembershipForm();"-->
+    <% if(formMode == 'createNew' || formMode == 'edit') { %>
+        <form action="<%= formAction %>" method="post" class="form" novalidate >
+            <input type="hidden" name="IdMemberShip" value="<%= memberShip.IdMemberShip %>">
+
+            <% if(loggedUser.role.RoleName == 'Admin') { %>
+                <label for="IdClient"><%= __('memberShip.fields.idClient') %>: <span
+                            class="symbol-required">*</span></label>
+                <select name="IdClient"
+                        class="<%= validationErrors.find(e => e.path.includes('IdClient')) ? 'error-input' : '' %>"
+                        id="IdClient"
+                        required <%= (formMode == 'showDetails') ? 'disabled' : '' %>>
+                    <option value="">--<%= __('memberShip.form.add.clientChoice') %>--</option>
+                    <% for(let i = 0; i < allClients.length; i++) { let c = allClients[i] %>
+                    <option value="<%= c.IdClient %>"  <%= (validateError) ? (memberShip.IdClient-1 == i ? 'selected' : '') :
+                            ((memberShip.IdMemberShip && c.IdClient.toString() == memberShip.Clients.IdClient.toString()) ? 'selected' : '') %>><%= c.FirstName + ' ' + c.LastName %></option>
+                    <% } %>
+                </select>
+                <span id="errorIdClient" class="errors-text">
+                    <% if (validationErrors.find(e => e.path.includes('IdClient'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('IdClient')).message %>
+                    <% } %>
+                </span>
+            <% } else { %>
+                <input type="hidden" name="IdClient" value="<%= loggedUser.IdClient%>">
+            <% }%>
+
+            <label for="IdGroup"><%= __('memberShip.fields.idGroup') %>: <span class="symbol-required">*</span></label>
+            <select name="IdGroup"
+                    class="<%= validationErrors.find(e => e.path.includes('IdGroup')) ? 'error-input' : '' %>"
+                    id="IdGroup"
+                    required <%= (formMode == 'showDetails') ? 'disabled' : '' %>>
+                <option value="">--<%= __('memberShip.form.add.groupChoice') %>--</option>
+                <% for(let i = 0; i < allGroups.length; i++) { let gr = allGroups[i] %>
+                <option value="<%= gr.IdGroup %>"  <%= (validateError) ? (memberShip.IdGroup-1 == i ? 'selected' : '') :
+                        ((memberShip.IdMemberShip && gr.IdGroup.toString() == memberShip.Groups.IdGroup.toString()) ? 'selected' : '') %>><%= gr.GroupName %></option>
+                <% } %>
+            </select>
+            <span id="errorIdGroup" class="errors-text">
+                <% if (validationErrors.find(e => e.path.includes('IdGroup'))) { %>
+                    <%= validationErrors.find(e => e.path.includes('IdGroup')).message %>
+                <% } %>
+            </span>
+
+            <label for="ClientNick"><%= __('memberShip.fields.clientNick') %>: </label>
+            <input type="text"
+                   class="<%= validationErrors.find(e => e.path.includes('ClientNick')) ? 'error-input' : '' %>"
+                   name="ClientNick" id="ClientNick" placeholder="2-60 znaków" value="<%= memberShip.ClientNick %>"
+                   required <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorClientNick" class="errors-text">
+                <% if (validationErrors.find(e => e.path.includes('ClientNick'))) { %>
+                    <%= validationErrors.find(e => e.path.includes('ClientNick')).message %>
+                <% } %>
+            </span>
+
+            <%- include('../../fragments/validationErrors') %>
+
+            <div class="form-buttons">
+                <p id="errorSummary" class="errors-text"></p>
+                <input type="submit" class="form-button-submit" value="<%= btnLabel %>"/>
+                <a href="/memberships" class="form-button-cancel"><%= __('form.actions.cancel') %></a>
+            </div>
+        </form>
+    <% } else { %>
+        <h2><%= __('memberShip.form.details.pageTitleClient') %></h2>
+        <form class="form">
+            <label for="FirstName"><%= __('myClient.fields.firstName') %>: <span
+                        class="symbol-required">*</span></label>
+            <input type="text" name="FirstName" id="FirstName" placeholder="2-60 znaków"
+                   value="<%= memberShip.Clients.FirstName %>"
+                   required <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorFirstName" class="errors-text"></span>
+
+            <label for="LastName"><%= __('myClient.fields.lastName') %>: <span class="symbol-required">*</span></label>
+            <input type="text"
+                   class="<%= validationErrors.find(e => e.path.includes('LastName')) ? 'error-input' : '' %>"
+                   name="LastName" id="LastName" placeholder="2-60 znaków" value="<%= memberShip.Clients.LastName %>"
+                   required <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorLastName" class="errors-text"></span>
+
+            <label for="PostCode"><%= __('myClient.fields.postCode') %>: <span class="symbol-required">*</span></label>
+            <input type="text"
+                   name="PostCode" id="PostCode" placeholder="np. 00-000" value="<%= memberShip.Clients.PostCode %>"
+                   required <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorPostCode" class="errors-text"></span>
+
+            <label for="PhoneNumber"><%= __('myClient.fields.phoneNumber') %>: </label>
+            <input type="tel"
+                   class="<%= validationErrors.find(e => e.path.includes('PhoneNumber')) ? 'error-input' : '' %>"
+                   name="PhoneNumber" id="PhoneNumber" placeholder="np. 123123123"
+                   value="<%= memberShip.Clients.PhoneNumber %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorPhoneNumber" class="errors-text">
+                <% if (validationErrors.find(e => e.path.includes('PhoneNumber'))) { %>
+                    <%= validationErrors.find(e => e.path.includes('PhoneNumber')).message %>
+                <% } %>
+            </span>
+
+            <label for="Login"><%= __('myClient.fields.login') %>: <span class="symbol-required">*</span></label>
+            <input type="text"
+                   name="Login" id="Login" placeholder="np. jakub12334"
+                   value="<%= memberShip.Clients.Login %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorLogin" class="errors-text"></span>
+        </form>
+        <h2><%= __('memberShip.form.details.pageTitleGroup') %></h2>
+        <form class="form">
+            <label for="GroupName"><%= __('group.fields.groupName') %>: <span class="symbol-required">*</span></label>
+            <input type="text" name="GroupName" id="GroupName" placeholder="np. Grupa1" required
+                   value="<%= memberShip.Groups.GroupName %>"
+                   required <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorGroupName" class="errors-text"></span>
+
+            <label for="CreationDate"><%= __('group.fields.creationDate') %>: <span
+                        class="symbol-required">*</span></label>
+            <input type="text" name="CreationDate" id="CreationDate" required
+                   value="<%= memberShip.Groups.CreationDate.toISOString().split('T')[0] %>"
+                   required <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorCreationDate" class="errors-text"></span>
+
+            <label for="Description"><%= __('group.fields.description') %>: </label>
+            <input type="text" name="Description" id="Description" placeholder="np. Tu znajduje się opis 2 grupy"
+                   required value="<%= memberShip.Groups.Description %>"
+                   required <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorDescription" class="errors-text"></span>
+        </form>
+        <h2><%= __('memberShip.form.details.pageTitleMembership') %></h2>
+        <form class="form" method="post" novalidate>
+            <label for="ClientNick"><%= __('memberShip.fields.clientNick') %>: </label>
+            <input type="text"
+                   class="<%= validationErrors.find(e => e.path.includes('ClientNick')) ? 'error-input' : '' %>"
+                   name="ClientNick" id="ClientNick" placeholder="2-60 znaków" value="<%= memberShip.ClientNick %>"
+                   required <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorClientNick" class="errors-text"></span>
+
+            <div class="form-buttons">
+                <a href="/memberships/edit/<%= memberShip.IdMemberShip %>"
+                   class="form-button-submit"><%= __('form.actions.edit') %></a>
+                <a class="form-button-back" href="/memberships"><%= __('form.actions.return') %></a>
+            </div>
+        </form>
+    <% } %>
+</main>
+<%- include('../../fragments/footer.ejs') %>

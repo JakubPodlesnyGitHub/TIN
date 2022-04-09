@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../Css/page.css">
+    <link rel="stylesheet" href="../../Css/list.css">
+    <link rel="stylesheet" href="../../Css/button.css">
+    <title>Store List</title>
+</head>
+<body>
+<header>
+    <h1>CineGO</h1>
+    <img src="../../Images/CompanyLogo.png" width="150" height="100" alt="CompanyLogo">
+</header>
+<nav>
+    <ul>
+        <li><a href="../../Index.html">Strona Główna</a></li>
+        <li><a href="../Movie/MovieList.html">Filmy</a></li>
+        <li><a href="StoreList.html">Zawartość Zamówień</a></li>
+        <li><a href="../Client/ClientList.html">Klienci</a></li>
+        <li><a href="../Order/OrderList.html">Zamówienia</a></li>
+    </ul>
+</nav>
+<main>
+    <h2>Lista zawartości zamówień</h2>
+    <table class="table-list">
+        <thead>
+        <tr>
+            <th>Kod Zamówienia</th>
+            <th>Tytuł</th>
+            <th>Koszt Zamówienia</th>
+            <th>Ilość</th>
+            <th>Akcje</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Kod Zamówienia">1111</td>
+            <td data-label="Tytuł">Władca Pierścieni</td>
+            <td data-label="Koszt Zamówienia">80</td>
+            <td data-label="Ilość">2</td>
+            <td data-label="Akcje">
+                <ul class="list-actions">
+                    <li><a href="StoreDetails.html" class="list-actions-button-details">Szczegóły</a></li>
+                    <li><a href="StoreFormEdit.html" class="list-actions-button-edit">Edytuj</a></li>
+                    <li><a href="" class="list-actions-button-delete">Usuń</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td data-label="Kod Zamówienia">2222</td>
+            <td data-label="Tytuł">Piękny Umysł</td>
+            <td data-label="Koszt Zamówienia">50</td>
+            <td data-label="Ilość">1</td>
+            <td data-label="Akcje">
+                <ul class="list-actions">
+                    <li><a href="" class="list-actions-button-details">Szczegóły</a></li>
+                    <li><a href="" class="list-actions-button-edit">Edytuj</a></li>
+                    <li><a href="" class="list-actions-button-delete">Usuń</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td data-label="Kod Zamówienia">3333</td>
+            <td data-label="Tytuł">Pewnego razu ... w Hollywood</td>
+            <td data-label="Koszt Zamówienia">100</td>
+            <td data-label="Ilość">3</td>
+            <td data-label="Akcje">
+                <ul class="list-actions">
+                    <li><a href="" class="list-actions-button-details">Szczegóły</a></li>
+                    <li><a href="" class="list-actions-button-edit">Edytuj</a></li>
+                    <li><a href="" class="list-actions-button-delete">Usuń</a></li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p><a href="StoreForm.html" class="button-add">Dodaj Nowy Produkt do Zamówienia</a></p>
+</main>
+<footer>Jakub,Podleśny,s20540</footer>
+</body>
+</html>

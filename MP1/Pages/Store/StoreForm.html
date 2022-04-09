@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../Css/page.css">
+    <link rel="stylesheet" href="../../Css/form.css">
+    <link rel="stylesheet" href="../../Css/errors.css">
+    <script type="application/javascript" src="../../js/validationCommon.js"></script>
+    <script type="application/javascript" src="../../js/validationStoreForm.js"></script>
+    <title>Products Add To Order</title>
+</head>
+<body>
+<header>
+    <h1>CineGO</h1>
+    <img src="../../Images/CompanyLogo.png" width="150" height="100" alt="CompanyLogo">
+</header>
+<nav>
+    <ul>
+        <li><a href="../../Index.html">Strona Główna</a></li>
+        <li><a href="../Movie/MovieList.html">Filmy</a></li>
+        <li><a href="StoreList.html">Zawartość Zamówień</a></li>
+        <li><a href="../Client/ClientList.html">Klienci</a></li>
+        <li><a href="../Order/OrderList.html">Zamówienia</a></li>
+    </ul>
+</nav>
+<main>
+    <h2>Dodawanie nowego produktu do zmówienia</h2>
+    <form action="StoreList.html" class="form" novalidate onsubmit="return validateStoreForm();">
+
+        <label for="orderCode">Kod Zamówienia: <span class="symbol-required">*</span></label>
+        <select name="orderCode" id="orderCode" required>
+            <option value="">--Wybierz Kod Zamówienia--</option>
+            <option value="1">1111</option>
+            <option value="2">2222</option>
+            <option value="3">3333</option>
+        </select>
+        <span id="errorOrderCode" class="errors-text"></span>
+
+        <label for="movie">Film: <span class="symbol-required">*</span></label>
+        <select name="movieTitle" id="movie" required>
+            <option value="">--Wybierz Film--</option>
+            <option value="1">Władca Pierścieni</option>
+            <option value="2">Piękny Umysł</option>
+            <option value="3">Pewnego razu... w Hollywood</option>
+        </select>
+        <span id="errorMovie" class="errors-text"></span>
+
+        <label for="cost">Koszt: <span class="symbol-required">*</span></label>
+        <input type="number" name="cost" id="cost" required/>
+        <span id="errorCost" class="errors-text"></span>
+
+        <label for="movieAmount"> Ilość: <span class="symbol-required">*</span></label>
+        <input type="number" name="movieAmount" id="movieAmount" required/>
+        <span id="errorAmount" class="errors-text"></span>
+
+        <div class="form-buttons">
+            <p id="errorSummary" class="errors-text"></p>
+            <input type="submit" class="form-button-submit" value="Dodaj"/>
+            <a href="StoreList.html" class="form-button-cancel">Anuluj</a>
+        </div>
+
+    </form>
+</main>
+<footer>Jakub,Podleśny,s20540</footer>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2><%= __('movie.list.pageTitle') %></h2>
+    <% if(movies.length != 0) { %>
+        <table class="table-list">
+            <thead>
+            <tr>
+                <th><%= __('movie.fields.title') %></th>
+                <th><%= __('movie.fields.movieType') %></th>
+                <th><%= __('movie.fields.director') %></th>
+                <% if(loggedUser.role.RoleName == 'Admin') { %>
+                    <th><%= __('list.actions.title') %></th>
+                <% } %>
+            </tr>
+            </thead>
+            <tbody>
+
+            <% for(let movie of movies) { %>
+                <tr>
+                    <td data-label="<%= __('movie.fields.title') %>"><%= movie.Title %></td>
+                    <td data-label="<%= __('movie.fields.movieType') %>"><%= movie.MovieType %></td>
+                    <td data-label="<%= __('movie.fields.director') %>"><%= movie.Director %></td>
+                    <% if(loggedUser.role.RoleName == 'Admin') { %>
+                        <td data-label="<%= __('list.actions.title') %>">
+                            <ul class="list-actions">
+                                <li><a href="/movies/details/<%= movie.IdMovie %>"
+                                       class="list-actions-button-details"><%= __('list.actions.details') %></a></li>
+                                <li><a href="/movies/edit/<%= movie.IdMovie %>"
+                                       class="list-actions-button-edit"><%= __('list.actions.edit') %></a>
+                                </li>
+                                <li><a href="/movies/delete/<%= movie.IdMovie %>"
+                                       class="list-actions-button-delete"><%= __('list.actions.delete') %></a>
+                                </li>
+                            </ul>
+                        </td>
+                    <% } %>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+    <% }else{ %>
+        <p class="errors-text"><%= __('movie.list.noData') %></p>
+    <% } %>
+    <% if(loggedUser.role.RoleName == 'Admin') { %>
+        <p><a href="/movies/add" class="button-add"><%= __('movie.list.addNew') %></a></p>
+    <% } %>
+</main>
+<%- include('../../fragments/footer.ejs') %>

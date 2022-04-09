@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../Css/page.css">
+    <link rel="stylesheet" href="../../Css/form.css">
+    <link rel="stylesheet" href="../../Css/errors.css">
+    <script type="application/javascript" src="../../js/validationCommon.js"></script>
+    <script type="application/javascript" src="../../js/validationOrderForm.js"></script>
+    <title>Client Edit</title>
+</head>
+<body>
+<header>
+    <h1>CineGO</h1>
+    <img src="../../Images/CompanyLogo.png" width="150" height="100" alt="CompanyLogo">
+
+</header>
+<nav>
+    <ul>
+        <li><a href="../../Index.html">Strona Główna</a></li>
+        <li><a href="../Movie/MovieList.html">Filmy</a></li>
+        <li><a href="../Store/StoreList.html">Zawartość Zamówień</a></li>
+        <li><a href="../Client/ClientList.html">Klienci</a></li>
+        <li><a href="OrderList.html" class="active">Zamówienia</a></li>
+    </ul>
+</nav>
+<main>
+    <h2>Edytowanie danych klienta</h2>
+
+    <form action="OrderList.html" class="form" novalidate onsubmit="return validateOrderForm();">
+
+        <label for="orderCode">Kod Zamówienia: <span class="symbol-required">*</span></label>
+        <input type="number" name="orderCode" id="orderCode" value="1111" required/>
+        <span id="errorOrderCode" class="errors-text"></span>
+
+        <label for="clientName">Imie i Nazwisko Klienta: <span class="symbol-required">*</span></label>
+        <select name="clientName" id="clientName" required>
+            <option value="">--Wybierz Imie i Nazwisko klienta--</option>
+            <option value="1" selected>Jakub Matczak</option>
+            <option value="2">Michał Polak</option>
+            <option value="3">Mateusz Romaniuk</option>
+        </select>
+        <span id="errorName" class="errors-text"></span>
+
+        <label for="orderDate">Data Zamówienia: <span class="symbol-required">*</span></label>
+        <input type="date" name="orderDate" id="orderDate" value="2012-02-12"/>
+        <span id="errorOrderDate" class="errors-text"></span>
+
+        <label for="orderCost">Koszt Dostawy: <span class="symbol-required">*</span></label>
+        <input type="number" name="orderCost" id="orderCost" value="200"/>
+        <span id="errorOrderCost" class="errors-text"></span>
+
+        <div class="form-buttons">
+            <input type="submit" value="Edytuj" class="form-button-submit"/>
+            <a href="OrderList.html" class="form-button-cancel">Anuluj</a>
+        </div>
+
+    </form>
+</main>
+<footer>Jakub,Podleśny,s20540</footer>
+</body>
+</html>

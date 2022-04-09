@@ -1,0 +1,298 @@
+{
+	"main-page": {
+		"content": "Main Page"
+	},
+	"nav": {
+		"main-page": "MainPage",
+		"movies": "Movies",
+		"store": "Content of Orders",
+		"clients": "Clients",
+		"orders": "Orders",
+		"group": "Groups",
+		"memberShip": "Membership"
+	},
+	"list": {
+		"actions": {
+			"title": "Actions",
+			"details": "Details",
+			"edit": "Edit",
+			"delete": "Delete"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Back",
+			"edit": "Edit",
+			"cancel": "Cancel"
+		}
+	},
+	"myClient": {
+		"fields": {
+			"firstName": "First Name",
+			"lastName": "Last Name",
+			"postCode": "Post Code",
+			"phoneNumber": "Phone Number",
+			"login": "Login",
+			"password": "Password"
+		},
+		"list": {
+			"title": "Clients",
+			"addNew": "Add New Client",
+			"noData": "There Are No Clients In Database",
+			"pageTitle": "Clients List"
+		},
+		"form": {
+			"orders": "Client Details",
+			"add": {
+				"pageTitle": "New Client",
+				"btnLabel": "Add Client",
+				"roleChoice": "Choosing A Role For The Client",
+				"confirm": {
+					"header": "Confirmation of The Operation",
+					"text": "Client Added Successfully"
+				}
+			},
+			"edit": {
+				"pageTitle": "Client Edition",
+				"btnLabel": "Save Changes",
+				"confirm": {
+					"header": "Confirmation of The Operation",
+					"text": "Client Edited Successfully"
+				}
+			},
+			"changePassword": {
+				"pageTitle": "Password Change",
+				"changePasswordLabel": "Edit Password",
+				"btnLabel": "Save Changes",
+				"confirm": {
+					"header": "Confirmation of The Operation",
+					"text": "Client Password Edit Successfully"
+				}
+			}
+		}
+	},
+	"movie": {
+		"fields": {
+			"title": "Movie Title",
+			"movieType": "Movie Genre",
+			"director": "Director",
+			"rate": "Rate",
+			"releaseDate": "Release Date",
+			"oscar": "Oscar",
+			"price": "Price",
+			"movieLength": "Movie Length"
+		},
+		"list": {
+			"title": "Movies",
+			"addNew": "Add New Movie",
+			"noData": "There Are No Movies In Database",
+			"pageTitle": "Movies List"
+		},
+		"form": {
+			"orders": "Details of Orders For A Given Movie ",
+			"add": {
+				"pageTitle": "New Movie",
+				"btnLabel": "Add New Movie",
+				"rateChoice": "Select Rate",
+				"oscarChoice": "Select If Movie Has Oscar",
+				"confirm": {
+					"header": "Confirmation of The Operation",
+					"text": "Movie Added Successfully"
+				}
+			},
+			"edit": {
+				"pageTitle": "Movie Edition",
+				"btnLabel": "Save Changes",
+				"confirm": {
+					"header": "Confirmation of The Operation",
+					"text": "Movie Edited Successfully"
+				}
+			}
+		}
+	},
+	"order": {
+		"fields": {
+			"orderCode": "Order Code",
+			"idClient": "Client FirstName And LastName",
+			"orderDate": "Order Date",
+			"deliveryCost": "Delivery Cost"
+		},
+		"list": {
+			"title": "Orders",
+			"addNew": "Add New Order",
+			"noData": "There Are No Orders In Database",
+			"pageTitle": "Orders List"
+		},
+		"form": {
+			"orders": "Order Details",
+			"add": {
+				"pageTitle": "New Order",
+				"btnLabel": "Add New Order",
+				"clientChoice": "Select FirstName and LastName of Client",
+				"dateChoice": "Select the Date of Order",
+				"confirm": {
+					"header": "Confirmation of The Operation",
+					"text": "Order Added Successfully"
+				}
+			},
+			"edit": {
+				"pageTitle": "Order Edition",
+				"btnLabel": "Save Changes",
+				"confirm": {
+					"header": "Confirmation of The Operation",
+					"text": "Order Edited Successfully"
+				}
+			}
+		}
+	},
+	"store": {
+		"fields": {
+			"idOrder": "Order Code",
+			"idMovie": "Movie Title",
+			"cost": "Cost",
+			"amount": "Amount"
+		},
+		"list": {
+			"title": "Content Of The Orders",
+			"addNew": "Add New Product To Order",
+			"noData": "There Are No Orders In Database",
+			"pageTitle": "Content Of The Orders List"
+		},
+		"form": {
+			"store": "Product Details in Specific Order",
+			"add": {
+				"pageTitle": "Adding New Product To Order",
+				"btnLabel": "Add New Product To Order",
+				"orderChoice": "Select Client's Order",
+				"movieChoice": "Select Movie",
+				"confirm": {
+					"header": "Confirmation of The Operation",
+					"text": "Product Added Successfully To Order"
+				}
+			},
+			"edit": {
+				"pageTitle": "Editing Product In Order",
+				"btnLabel": "Save Changes",
+				"confirm": {
+					"header": "Confirmation of The Operation",
+					"text": "Product Edited Successfully"
+				}
+			},
+			"details": {
+				"pageTitleMovie": "Movie Details",
+				"pageTitleClient": "Client Details",
+				"pageTitleStore": "Product Details In Order",
+				"pageTitleOrder": "Order Details"
+			}
+		}
+	},
+	"group": {
+		"fields": {
+			"groupName": "Group name",
+			"creationDate": "Date of the Group's foundation",
+			"description": "Group description",
+			"clientNick": "group.fields.clientNick"
+		},
+		"list": {
+			"title": "Group List",
+			"addNew": "Create a New Group",
+			"noData": "No Records in the Database",
+			"pageTitle": "Group List"
+		},
+		"form": {
+			"membership": "Group details",
+			"add": {
+				"pageTitle": "Create a new group",
+				"btnLabel": "Create a new group",
+				"confirm": {
+					"header": "Confirmation of The Operation",
+					"text": "The Group has been successfully created"
+				}
+			},
+			"edit": {
+				"pageTitle": "Editing Group",
+				"btnLabel": "Save Changes",
+				"confirm": {
+					"header": "Confirmation of The Operation",
+					"text": "Group Data Successfully Updated"
+				}
+			},
+			"groupMembership": {
+				"pageTitle": "Members In The Group ",
+				"buttonToList": "Manage Members"
+			}
+		}
+	},
+	"memberShip": {
+		"fields": {
+			"idClient": "Client's First and Last Name",
+			"idGroup": "Group name ",
+			"joinDate": "Date of joining the group",
+			"clientNick": "Customer's nickname",
+			"details": {
+				"pageTitleGroup": "memberShip.fields.details.pageTitleGroup"
+			}
+		},
+		"list": {
+			"title": "Membership",
+			"addNew": "Join the Group",
+			"noData": "No Records in the Database",
+			"pageTitle": "Membership"
+		},
+		"form": {
+			"memberShipDetails": "Group membership",
+			"add": {
+				"pageTitle": "Joining a Group",
+				"btnLabel": "Join the Group ",
+				"clientChoice": "Select a Client",
+				"groupChoice": "Choose a Group",
+				"confirm": {
+					"header": "Confirmation of The Operation",
+					"text": "Successfully Joined the Group"
+				}
+			},
+			"edit": {
+				"pageTitle": "Editing Membership",
+				"btnLabel": "Save Changes",
+				"confirm": {
+					"header": "Confirmation of The Operation",
+					"text": "Successfully updated data in a given group"
+				}
+			},
+			"details": {
+				"pageTitleClient": "Customer Details",
+				"pageTitleGroup": "Group Details",
+				"pageTitleMembership": "Membership Details"
+			}
+		}
+	},
+	"authorization": {
+		"title": "LOGIN",
+		"login": "Log In",
+		"logPassword": "Password",
+		"logSentence": "You Are logged In As :",
+		"logout": "Log Out",
+		"logIn": "Log In",
+		"loginError": "Unauthorized Access",
+		"permitAuthenticatedUser": "Unregistered user",
+		"role": "Role"
+	},
+	"validation": {
+		"fieldRequired": "The field is required",
+		"numberField": "The field should be a number",
+		"negativeNumber": "The field cannot be negative",
+		"textLengthRangeLastName": "The field should contain from 2 to 60 characters",
+		"textLengthRangePostCode": "The field should contain 6 characters",
+		"textLengthRangePhoneInput": "The field should contain 9 characters",
+		"textLengthRangeGroupName": "The field should contain from 2 to 60 characters",
+		"textLengthRangeClientNick": "The field should contain from 2 to 60 characters",
+		"textLengthRangeDescription": "The field should contain from 2 to 200 characters",
+		"errorPhoneNumber": "The field should contain only numbers",
+		"errorPostCode": "The field should contain a valid Polish zip code",
+		"errorPassword": "Password should contain at least one number and one uppercase and one lowercase letter and min. 8 characters",
+		"errorDirector": "The field should contain two words -> Name and Surname ",
+		"errorFormatDate": "The wrong format ",
+		"errorFutureDate": "The date cannot be later than today ",
+		"errorSummaryForm": "The form contains errors"
+	}
+}

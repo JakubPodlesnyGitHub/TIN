@@ -1,0 +1,45 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2><%= __('store.list.pageTitle') %></h2>
+    <% if(stores.length != 0) { %>
+        <table class="table-list">
+            <thead>
+            <tr>
+                <th><%= __('store.fields.idOrder') %></th>
+                <th><%= __('store.fields.idMovie') %></th>
+                <th><%= __('store.fields.cost') %></th>
+                <th><%= __('store.fields.amount') %></th>
+                <th><%= __('list.actions.title') %></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for(let store of stores) { %>
+                <% if((loggedUser.role.RoleName == 'Client' && store.Orders.clients.IdClient == loggedUser.IdClient) || loggedUser.role.RoleName == 'Admin') { %>
+                    <tr>
+                        <td data-label="<%= __('store.fields.idOrder') %>"><%= store.Orders.OrderCode %></td>
+                        <td data-label="<%= __('store.fields.idMovie') %>"><%= store.Movies.Title %></td>
+                        <td data-label="<%= __('store.fields.cost') %>"><%= store.Cost %></td>
+                        <td data-label="<%= __('store.fields.amount') %>"><%= store.Amount %></td>
+                        <td data-label="<%= __('list.actions.title') %>">
+                            <ul class="list-actions">
+                                <li><a href="/store/details/<%= store.IdStore %>"
+                                       class="list-actions-button-details"><%= __('list.actions.details') %></a></li>
+                                <li><a href="/store/edit/<%= store.IdStore %>"
+                                       class="list-actions-button-edit"><%= __('list.actions.edit') %></a>
+                                </li>
+                                <li><a href="/store/delete/<%= store.IdStore %>"
+                                       class="list-actions-button-delete"><%= __('list.actions.delete') %></a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                <% } %>
+            <% } %>
+            </tbody>
+        </table>
+    <% }else{ %>
+        <p class="errors-text"><%= __('store.list.noData') %></p>
+    <% } %>
+    <p><a href="/store/add" class="button-add"><%= __('store.list.addNew') %></a></p>
+</main>
+<%- include('../../fragments/footer.ejs') %>

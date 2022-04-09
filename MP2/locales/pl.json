@@ -1,0 +1,297 @@
+{
+	"main-page": {
+		"content": "Strona główna"
+	},
+	"nav": {
+		"main-page": "Strona Główna",
+		"movies": "Filmy",
+		"store": "Zawartość Zamówień",
+		"clients": "Klienci",
+		"orders": "Zamówienia",
+		"group": "Grupy",
+		"memberShip": "Członkostwo"
+	},
+	"list": {
+		"actions": {
+			"title": "Akcje",
+			"details": "Szczegóły",
+			"edit": "Edytuj",
+			"delete": "Usuń"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Powrót",
+			"edit": "Edytuj",
+			"cancel": "Anuluj"
+		}
+	},
+	"myClient": {
+		"fields": {
+			"firstName": "Imię",
+			"lastName": "Nazwisko",
+			"postCode": "Kod Pocztowy",
+			"phoneNumber": "Telefon",
+			"login": "Login",
+			"password": "Hasło"
+		},
+		"list": {
+			"title": "Klienci",
+			"addNew": "Dodaj Nowego Klienta",
+			"noData": "Brak Klientów w Bazie",
+			"pageTitle": "Lista Klientów"
+		},
+		"form": {
+			"orders": "Szczegóły Klienta",
+			"add": {
+				"pageTitle": "Nowy Klient",
+				"btnLabel": "Dodaj Klienta",
+				"roleChoice": "Wybór roli dla klienta",
+				"confirm": {
+					"header": "Potwierdzenie Operacji",
+					"text": "Pomyślnie Dodano Klienta"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja Klienta",
+				"btnLabel": "Zapisz Zmiany",
+				"confirm": {
+					"header": "Potwierdzenie Operacji",
+					"text": "Pomyślnie Zaktualizowano Klienta"
+				}
+			},
+			"changePassword": {
+				"pageTitle": "Zmiana Hasła",
+				"changePasswordLabel": "Edytuj Hasło",
+				"btnLabel": "Zapisz Zmiany",
+				"confirm": {
+					"header": "Potwierdzenie Operacji",
+					"text": "Pomyślnie Zaktualizowano Hasło Klienta"
+				}
+			}
+		}
+	},
+	"movie": {
+		"fields": {
+			"title": "Tytuł Filmu",
+			"movieType": "Gatunek Filmu",
+			"director": "Reżyser",
+			"rate": "Ocena",
+			"releaseDate": "Data Premiery",
+			"oscar": "Posiadanie Oskara",
+			"price": "Cena",
+			"movieLength": "Długość Filmu"
+		},
+		"list": {
+			"title": "Filmy",
+			"addNew": "Dodaj Nowy Film",
+			"noData": "Brak Filmów w Bazie",
+			"pageTitle": "Lista Filmów"
+		},
+		"form": {
+			"orders": "Szczegóły Zamówień Danego Filmu",
+			"add": {
+				"pageTitle": "Nowy Film",
+				"btnLabel": "Dodaj Film",
+				"rateChoice": "Wybierz ocene",
+				"oscarChoice": "Czy Film Posiada Oscara",
+				"confirm": {
+					"header": "Potwierdzenie Operacji",
+					"text": "Pomyślnie Dodano Film"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja Filmu",
+				"btnLabel": "Zapisz Zmiany",
+				"confirm": {
+					"header": "Potwierdzenie Operacji",
+					"text": "Pomyślnie Zaktualizowano Film"
+				}
+			}
+		}
+	},
+	"order": {
+		"fields": {
+			"orderCode": "Kod Zamówienia",
+			"idClient": "Imie i Nazwisko Klienta",
+			"orderDate": "Data Zamówienia",
+			"deliveryCost": "Koszt Dostawy"
+		},
+		"list": {
+			"title": "Zamówienia",
+			"addNew": "Dodaj Nowe Zamówienie",
+			"noData": "Brak Zamówień w Bazie",
+			"pageTitle": "Lista Zamówień"
+		},
+		"form": {
+			"orders": "Szczegóły Zamówienia",
+			"add": {
+				"pageTitle": "Nowe Zamówienie",
+				"btnLabel": "Dodaj Zamówienie",
+				"clientChoice": "Wybierz Imie i Nazwisko Klienta",
+				"dateChoice": "Wybierz Date Zamówienia Danego Klienta",
+				"confirm": {
+					"header": "Potwierdzenie Operacji",
+					"text": "Pomyślnie Dodano Zamówienie"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja Zamówienia",
+				"btnLabel": "Zapisz Zmiany",
+				"confirm": {
+					"header": "Potwierdzenie Operacji",
+					"text": "Pomyślnie Zaktualizowano Zamówienie"
+				}
+			}
+		}
+	},
+	"store": {
+		"fields": {
+			"idOrder": "Kod Zamówienia",
+			"idMovie": "Tytuł Filmu",
+			"cost": "Koszt zmamówienia",
+			"amount": "Ilość"
+		},
+		"list": {
+			"title": "Zawartość Zamówień",
+			"addNew": "Dodaj Nowy Produkt Do Zamówienia",
+			"noData": "Brak Rekordów w Bazie",
+			"pageTitle": "Lista zawartości zamówień"
+		},
+		"form": {
+			"store": "Szczegóły Produktu W Zmówieniu",
+			"add": {
+				"pageTitle": "Dodawanie Nowego Produktu Do Zmówienia",
+				"btnLabel": "Dodaj Nowy Produkt Do Zmówienia",
+				"orderChoice": "Wybierz Kod Zamówienia",
+				"movieChoice": "Wybierz Film",
+				"confirm": {
+					"header": "Potwierdzenie Operacji",
+					"text": "Pomyślnie Dodano Produkt Do Zamówienia"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja Produktu W Zmówieniu",
+				"btnLabel": "Zapisz Zmiany",
+				"confirm": {
+					"header": "Potwierdzenie Operacji",
+					"text": "Pomyślnie Zaktualizowano Produkt w Zamówieniu"
+				}
+			},
+			"details": {
+				"pageTitleMovie": "Szczegóły Dotyczące Filmu",
+				"pageTitleClient": "Szczegóły Dotyczące Klienta",
+				"pageTitleStore": "Szczegóły Dotyczące Produktu W Danym Zamówieniu",
+				"pageTitleOrder": "Szczegóły Dotyczące Zamówienia"
+			}
+		}
+	},
+	"group": {
+		"fields": {
+			"groupName": "Nazwa Grupy",
+			"creationDate": "Data Powstania Grupy",
+			"description": "Opis Grupy"
+		},
+		"list": {
+			"title": "Lista Grup",
+			"addNew": "Stwórz Nową Grupę",
+			"noData": "Brak Rekordów w Bazie",
+			"pageTitle": "Lista Grup"
+		},
+		"form": {
+			"membership": "Szczegóły Grupy",
+			"add": {
+				"pageTitle": "Tworzenie nowej grupy",
+				"btnLabel": "Stwórz nową grupę",
+				"confirm": {
+					"header": "Potwierdzenie Operacji",
+					"text": "Pomyślnie Stworzono Grupę"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja Grupy",
+				"btnLabel": "Zapisz Zmiany",
+				"confirm": {
+					"header": "Potwierdzenie Operacji",
+					"text": "Pomyślnie Zaktualizowano Dane Dotyczące Grupy"
+				}
+			},
+			"details": {
+				"button": "Członkowie grupy"
+			},
+			"groupMembership": {
+				"pageTitle": "Członkowie w Grupie",
+				"buttonToList": "Zarządzaj Członkami"
+			}
+		}
+	},
+	"memberShip": {
+		"fields": {
+			"idClient": "Imie i Nazwisko Klienta",
+			"idGroup": "Nazwa Grupy",
+			"joinDate": "Data Dołączenia Do Grupy",
+			"clientNick": "Nick Klienta"
+		},
+		"list": {
+			"title": "Członkostwo",
+			"addNew": "Dołącz Do Grupy",
+			"noData": "Brak Rekordów w Bazie",
+			"pageTitle": "Członkostwo"
+		},
+		"form": {
+			"memberShipDetails": "Członkowstwo w Grupie",
+			"add": {
+				"pageTitle": "Dołączenie Do Grupy",
+				"btnLabel": "Dołącz do Grupy",
+				"clientChoice": "Wybierz Klienta",
+				"groupChoice": "Wybierz Grupe",
+				"confirm": {
+					"header": "Potwierdzenie Operacji",
+					"text": "Pomyślnie Dołączono Do Grupy"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja Członkostwa",
+				"btnLabel": "Zapisz Zmiany",
+				"confirm": {
+					"header": "Potwierdzenie Operacji",
+					"text": "Pomyślnie Zaktualizowano Dane W Danej Grupie"
+				}
+			},
+			"details": {
+				"pageTitleClient": "Szczegóły Dotyczące Klienta",
+				"pageTitleGroup": "Szczegóły Dotyczące Grupy",
+				"pageTitleMembership": "Szczegóły Dotyczące Członkostwa"
+			}
+		}
+	},
+	"authorization": {
+		"title": "Logowanie",
+		"login": "Login",
+		"logPassword": "Hasło",
+		"logSentence": "Jesteś Zalogowany Jako:",
+		"logout": "Wyloguj się",
+		"logIn": "Zaloguj się",
+		"loginError": "Nieautoryzowany dostęp",
+		"permitAuthenticatedUser": "Niezarejestrowny użytkownik",
+		"role": "Rola"
+	},
+	"validation": {
+		"fieldRequired": "Pole jest wymagane",
+		"numberField": "Dane pole powinno być liczbą",
+		"negativeNumber": "Dane pole nie może być ujemne",
+		"textLengthRangeLastName": "Pole powinno zawierać od 2 do 60 znaków",
+		"textLengthRangeGroupName": "Pole powinno zawierać od 2 do 60 znaków",
+		"textLengthRangeClientNick": "Pole powinno zawierać od 2 do 60 znaków",
+		"textLengthRangeDescription": "Pole powinno zawierać od 2 do 200 znaków",
+		"textLengthRangePostCode": "Pole powinno zawierać 6 znaków",
+		"textLengthRangePhoneInput": "Pole powinno zawierać 9 znaków",
+		"errorPhoneNumber": "Pole powinno zawierać same cyfry",
+		"errorPostCode": "Pole powinno zawierac poprawny Polski kod pocztowy",
+		"errorPassword": "Hasło powinno zawierać co najmniej jedną cyfre i jedną dużą literę i jedną małą literę oraz min. 8 znaków",
+		"errorDirector": "Pole powinno zawierać dwa słowa -> Imie i Nazwisko",
+		"errorFormatDate": "Zły Format",
+		"errorFutureDate": "Data nie może być późniejsza niż dzisiejsza",
+		"errorSummaryForm": "Formularz zawiera błędy"
+	}
+}

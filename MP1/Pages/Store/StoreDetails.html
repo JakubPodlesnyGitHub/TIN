@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../../Css/page.css">
+    <link rel="stylesheet" href="../../Css/form.css">
+    <link rel="stylesheet" href="../../Css/list.css">
+    <link rel="stylesheet" href="../../Css/errors.css">
+    <title>Store Details</title>
+</head>
+<body>
+<header>
+    <h1>CineGO</h1>
+    <img src="../../Images/CompanyLogo.png" width="150" height="100" alt="CompanyLogo">
+</header>
+<nav>
+    <ul>
+        <li><a href="../../Index.html">Strona Główna</a></li>
+        <li><a href="../Movie/MovieList.html">Filmy</a></li>
+        <li><a href="StoreList.html">Zawartość Zamówień</a></li>
+        <li><a href="../Client/ClientList.html">Klienci</a></li>
+        <li><a href="../Order/OrderList.html">Zamówienia</a></li>
+    </ul>
+</nav>
+<main>
+    <h2>Szczegóły dotyczące filmu</h2>
+
+    <form action="StoreForm.html" class="form">
+
+        <label for="movieName">Film: <span class="symbol-required">*</span></label>
+        <select name="movieName" id="movieName" required disabled>
+            <option value="">--Wybierz Film--</option>
+            <option value="1" selected>Władca Pierścieni</option>
+            <option value="2">Harry Potter</option>
+            <option value="3">Dwóch papieży</option>
+            <option value="4">Piękny umysł</option>
+            <option value="5">Pewnego razu... w Hollywood</option>
+            <option value="6">Milczenie owiecd</option>
+        </select>
+        <span id="errorMovieName"></span>
+
+        <label for="movieType">Gatunek Filmu: <span class="symbol-required">*</span></label>
+        <input type="text" name="movieType" id="movieType" value="Fantasy" disabled/>
+        <span id="errorMovieType"></span>
+
+        <label for="director">Reżyser: <span class="symbol-required">*</span></label>
+        <input type="text" name="director" id="director" value="Peter Jackson" disabled/>
+        <span id="errorDirector"></span>
+
+        <label for="releaseDate">Data Premiery: <span class="symbol-required">*</span></label>
+        <input type="date" name="releaseDate" id="releaseDate" value="2002-02-18" required disabled/>
+        <span id="errorReleaseDate"></span>
+
+        <label for="rate">Ocena: <span class="symbol-required">*</span></label>
+        <select name="rate" id="rate" required disabled>
+            <option value="">--Wybierz ocene--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9" selected>9</option>
+            <option value="10">10</option>
+        </select>
+        <span id="errorRate"></span>
+
+        <label for="oscar">Oskar: </label>
+        <select name="oscar" id="oscar" disabled>
+            <option>--Czy film posiada oscara--</option>
+            <option value="1" selected>TAK</option>
+            <option value="2">NIE</option>
+        </select>
+        <span id="errorOskar"></span>
+
+        <label for="price">Cena: <span class="symbol-required">*</span></label>
+        <input type="number" name="price" id="price" value="30" required disabled/>
+        <span id="errorPrice"></span>
+
+        <label for="movieLength">Długość Filmu: </label>
+        <input type="text" name="movieLength" id="movieLength" value="152" disabled/>
+        <span id="errorMovieLength"></span>
+    </form>
+
+    <h2>Szczegóły dotyczące klienta</h2>
+
+    <form class="form">
+
+        <label for="clientName">Imie i Nazwisko Klienta: <span class="symbol-required">*</span></label>
+        <select name="clientName" id="clientName" required disabled>
+            <option value="">--Wybierz Imie i Nazwisko klienta--</option>
+            <option value="1" selected>Jakub Matczak</option>
+            <option value="2">Michał Polak</option>
+            <option value="3">Mateusz Romaniuk</option>
+        </select>
+        <span id="errorName"></span>
+
+        <label for="postCode">Kod Pocztowy: <span class="symbol-required">*</span></label>
+        <input type="text" name="postCode" id="postCode" value="02-456" disabled/>
+        <span id="errorPostCode"></span>
+
+        <label for="phone">Tel: </label>
+        <input type="tel" name="phone" id="phone" value="555222333" disabled/>
+        <span id="errorPhone"></span>
+    </form>
+
+    <h2>Szczegóły dotyczące zmówienia</h2>
+
+    <form class="form">
+
+        <label for="orderCode">Kod Zamówienia: <span class="symbol-required">*</span></label>
+        <select name="orderCode" id="orderCode" required disabled>
+            <option value="">--Wybierz Kod Zamówienia--</option>
+            <option value="1" selected>1111</option>
+            <option value="2">2222</option>
+            <option value="3">3333</option>
+        </select>
+        <span id="errorOrderCode"></span>
+
+        <label for="orderDate">Data Zamówienia: <span class="symbol-required">*</span></label>
+        <select name="orderDate" id="orderDate" required disabled>
+            <option value="">--Wybierz Date Zamówienia Danego Klienta--</option>
+            <option value="1" selected>12.12.2020</option>
+            <option value="2">12.06.2020</option>
+            <option value="3">11.10.2020</option>
+        </select>
+        <span id="errorOrderDate"></span>
+
+        <label for="orderCost">Koszt Dostawy: <span class="symbol-required">*</span></label>
+        <input type="number" name="orderCost" id="orderCost" value="200" disabled/>
+        <span id="errorOrderCost"></span>
+    </form>
+
+    <h2>Szczegóły dotyczące produktu w danym zamówieniu</h2>
+
+    <form action="StoreForm.html" class="form">
+
+        <label for="cost">Koszt: <span class="symbol-required">*</span></label>
+        <input type="number" name="cost" id="cost" value="80" disabled/>
+        <span id="errorCost"></span>
+
+        <label for="movieAmount"> Ilość: <span class="symbol-required">*</span></label>
+        <input type="number" name="movieAmount" id="movieAmount" value="2" disabled/>
+        <span id="errorAmount"></span>
+
+        <div class="form-buttons">
+            <input type="submit" class="form-button-submit" value="Edytuj"/>
+        </div>
+    </form>
+
+    <div class="form-buttons">
+        <a class="form-button-back" href="StoreList.html">Powrót</a>
+    </div>
+
+</main>
+<footer>Jakub,Podleśny,s20540</footer>
+</body>
+</html>

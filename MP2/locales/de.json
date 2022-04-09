@@ -1,0 +1,295 @@
+{
+	"main-page": {
+		"content": "Hauptseite"
+	},
+	"nav": {
+		"main-page": "Hauptseite",
+		"movies": "Filme",
+		"store": "Bestellungen Inhalt",
+		"clients": "Kunden",
+		"orders": "Bestellungen",
+		"group": "Gruppen",
+		"memberShip": "Mitgliedschaft"
+	},
+	"list": {
+		"actions": {
+			"title": "Aktionen",
+			"details": "Einzelheiten",
+			"edit": "Ediert",
+			"delete": "Trifft En"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Rückkehr",
+			"edit": "Ediert",
+			"cancel": "Annulliert"
+		}
+	},
+	"myClient": {
+		"fields": {
+			"firstName": "Name",
+			"lastName": "Familiename",
+			"postCode": "Postleitzahl",
+			"phoneNumber": "Telefonnummer",
+			"login": "Login",
+			"password": "Passwort"
+		},
+		"list": {
+			"title": "Kunden",
+			"addNew": "Hinzufügt Neuen Kunde",
+			"noData": "Es Befinden Sich Keine Kunden In Der Datenbank",
+			"pageTitle": "Kunden Liste"
+		},
+		"form": {
+			"orders": "Einzelheiten Kunden",
+			"add": {
+				"pageTitle": "Neuen Kunde",
+				"btnLabel": "Hinzufügt Kunde",
+				"roleChoice": "Auswahl Einer Rolle Für Den Kunden",
+				"confirm": {
+					"header": "Bestätigung der Operation",
+					"text": "Kunde Erfolgreich Hinzugefügt"
+				}
+			},
+			"edit": {
+				"pageTitle": "Kunden Edieren",
+				"btnLabel": "Änderungen Speichern",
+				"confirm": {
+					"header": "Bestätigung der Operation",
+					"text": "Kunde Erfolgreich Ediert"
+				}
+			},
+			"changePassword": {
+				"pageTitle": "Passwortänderung ",
+				"changePasswordLabel": "Ediert Passwort",
+				"btnLabel": "Änderungen Speichern",
+				"confirm": {
+					"header": "Bestätigung der Operation",
+					"text": "Kunde Passwort Erfolgreich Ediert"
+				}
+			}
+		}
+	},
+	"movie": {
+		"fields": {
+			"title": "Titel des Filme",
+			"movieType": "Filmgenre",
+			"director": "Direktor",
+			"rate": "Bewertung",
+			"releaseDate": "Veröffentlichungsdatum",
+			"oscar": "Oskar",
+			"price": "Preis",
+			"movieLength": "Die Länge des Films"
+		},
+		"list": {
+			"title": "Filme",
+			"addNew": "Hinzugefügt Neuen Filme",
+			"noData": "Es Befinden Sich Keine Filme In Der Datenbank",
+			"pageTitle": "Filme Liste"
+		},
+		"form": {
+			"orders": "Bestelldetails Für Einen Bestimmten Film ",
+			"add": {
+				"pageTitle": "Neuen Filme",
+				"btnLabel": "Hinzufügt Kunde",
+				"rateChoice": "Wählt Bewertung",
+				"oscarChoice": "Wählt Oscar",
+				"confirm": {
+					"header": "Bestätigung der Operation",
+					"text": "Filme Erfolgreich Hinzugefügt"
+				}
+			},
+			"edit": {
+				"pageTitle": "Filme Edieren",
+				"btnLabel": "Änderungen Speichern",
+				"confirm": {
+					"header": "Bestätigung der Operation",
+					"text": "Filme Erfolgreich Ediert"
+				}
+			}
+		}
+	},
+	"order": {
+		"fields": {
+			"orderCode": "Bestellcode",
+			"idClient": "Kunde Name Und Familienname",
+			"orderDate": "Auftragsdatum",
+			"deliveryCost": "Lieferkosten"
+		},
+		"list": {
+			"title": "Bestellungen",
+			"addNew": "Hinzufügt Neuen Bestellunge",
+			"noData": "Es Befinden Sich Keine Bestellungen In Der Datenbank",
+			"pageTitle": "Bestellungen Liste"
+		},
+		"form": {
+			"orders": "Einzelheiten Bestellunge",
+			"add": {
+				"pageTitle": "Neuen Bestellunge",
+				"btnLabel": "Hinzufügt Bestellunge",
+				"clientChoice": "Wählt Kunde",
+				"dateChoice": "Wählt Kunde Auftragsdatum",
+				"confirm": {
+					"header": "Bestätigung der Operation",
+					"text": "Bestellunge Erfolgreich Hinzugefügt"
+				}
+			},
+			"edit": {
+				"pageTitle": "Bestellunge Edieren",
+				"btnLabel": "Änderungen Speichern",
+				"confirm": {
+					"header": "Bestätigung der Operation",
+					"text": "Bestellunge Erfolgreich Ediert"
+				}
+			}
+		}
+	},
+	"store": {
+		"fields": {
+			"idOrder": "Bestellcode",
+			"idMovie": "Titel des Filme",
+			"cost": "Bestellunge Prise",
+			"amount": "Menge"
+		},
+		"list": {
+			"title": "Bestellungen Inhalt",
+			"addNew": "Hinzugefügt Neuen Produkt Zu Bestellunge",
+			"noData": "Es Befinden Sich Keine Produkt In Der Datenbank",
+			"pageTitle": "Bestellungen Inhalt Liste"
+		},
+		"form": {
+			"store": "Einzelheiten Produkt In Bestellunge",
+			"add": {
+				"pageTitle": "Neuen Produkt In Bestellunge",
+				"btnLabel": "Hinzugefügt Neuen Produkt Zu Bestellunge",
+				"orderChoice": "Wählt Bestellunge",
+				"movieChoice": "Wählt Filme",
+				"confirm": {
+					"header": "Bestätigung der Operation",
+					"text": "Produkt Erfolgreich Hinzugefügt zu Bestellunge"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edieren Produkt In Bestellunge",
+				"btnLabel": "Änderungen Speichern",
+				"confirm": {
+					"header": "Bestätigung der Operation",
+					"text": "Produkt In Bestellunge Erfolgreich Ediert"
+				}
+			},
+			"details": {
+				"pageTitleMovie": "Einzelheiten Filme",
+				"pageTitleClient": "Einzelheiten Kunde",
+				"pageTitleStore": "Einzelheiten Produkt In Bestellunge",
+				"pageTitleOrder": "Einzelheiten Bestellunge"
+			}
+		}
+	},
+	"group": {
+		"fields": {
+			"groupName": "Gruppenname",
+			"creationDate": "Datum der Gründung der Gruppe",
+			"description": "Gruppenbeschreibung",
+			"clientNick": "group.fields.clientNick"
+		},
+		"list": {
+			"title": "Gruppenliste",
+			"addNew": "Erstellen Sie eine neue Gruppe ",
+			"noData": "Es Befinden Sich Keine Gruppen In Der Datenbank",
+			"pageTitle": "Gruppenliste"
+		},
+		"form": {
+			"membership": "Gruppendetails",
+			"add": {
+				"pageTitle": "Erstellen Sie eine neue Gruppe ",
+				"btnLabel": "Erstellen Sie eine neue Gruppe ",
+				"confirm": {
+					"header": "Bestätigung der Operation",
+					"text": "Die Gruppe wurde erfolgreich erstellt"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edieren Grupp In Bestellunge",
+				"btnLabel": "Änderungen Speichern",
+				"confirm": {
+					"header": "Bestätigung der Operation",
+					"text": "Gruppendaten erfolgreich aktualisiert"
+				}
+			},
+			"groupMembership": {
+				"pageTitle": "Mitglieder In Der Gruppe",
+				"buttonToList": "Mitglieder Verwalten"
+			}
+		}
+	},
+	"memberShip": {
+		"fields": {
+			"idClient": "Vor und Nachname des Kunden",
+			"idGroup": "Gruppenname ",
+			"joinDate": "Datum des Beitritts zur Gruppe",
+			"clientNick": "Spitzname des Kunden"
+		},
+		"list": {
+			"title": "Mitgliedschaft",
+			"addNew": "Tritt der Gruppe bei",
+			"noData": "Es Befinden Sich Keine  In Der Datenbank",
+			"pageTitle": "Mitgliedschaft"
+		},
+		"form": {
+			"memberShipDetails": "Gruppenmitgliedschaft",
+			"add": {
+				"pageTitle": "Beitritt zu einer Gruppe",
+				"btnLabel": "Tritt der Gruppe bei ",
+				"clientChoice": "Wählen Sie einen Kunden aus",
+				"groupChoice": "Wählen Sie eine Gruppe",
+				"confirm": {
+					"header": "Bestätigung der Operation",
+					"text": "Der Gruppe erfolgreich beigetreten"
+				}
+			},
+			"edit": {
+				"pageTitle": "Mitgliedschaftsausgabe",
+				"btnLabel": "Änderungen Speichern",
+				"confirm": {
+					"header": "Bestätigung der Operation",
+					"text": "Erfolgreich aktualisierte Daten in einer bestimmten Gruppe"
+				}
+			},
+			"details": {
+				"pageTitleClient": "Kundendetails",
+				"pageTitleGroup": "Gruppendetails",
+				"pageTitleMembership": "Einzelheiten zur Mitgliedschaft"
+			}
+		}
+	},
+	"authorization": {
+		"title": "Anmeldung",
+		"login": "Login",
+		"logPassword": "Passwort",
+		"logSentence": "Du bist eingeloggt als:",
+		"logout": "Ausloggen",
+		"logIn": "Einloggen",
+		"loginError": "Unautorisierter Zugriff",
+		"permitAuthenticatedUser": "Nicht registrierter Benutzer",
+		"role": "Rolle"
+	},
+	"validation": {
+		"fieldRequired": "Dieses Feld ist erforderlich ",
+		"numberField": "Das Feld sollte eine Zahl sein ",
+		"negativeNumber": "Das Feld darf nicht negativ sein ",
+		"textLengthRangeLastName": "Das Feld sollte zwischen 2 und 60 Zeichen enthalten",
+		"textLengthRangePostCode": "Das Feld sollte 6 Zeichen enthalten",
+		"textLengthRangePhoneInput": "Das Feld sollte 9 Zeichen enthalten",
+		"textLengthRangeGroupName": "Das Feld sollte zwischen 2 und 60 Zeichen enthalten",
+		"textLengthRangeClientNick": "Das Feld sollte zwischen 2 und 60 Zeichen enthalten",
+		"textLengthRangeDescription": "Das Feld sollte zwischen 2 und 200 Zeichen enthalten ",
+		"errorPhoneNumber": "Das Feld sollte nur Zahlen enthalten ",
+		"errorPostCode": "Das Feld sollte eine gültige polnische Postleitzahl enthalten ",
+		"errorPassword": "Das Passwort sollte mindestens eine Zahl und einen Groß- und einen Kleinbuchstaben und min. 8 Charaktere ",
+		"errorDirector": "Das Feld sollte zwei Wörter enthalten -> Name und Nachname",
+		"errorFormatDate": "Falsches Format ",
+		"errorFutureDate": "Das Datum darf nicht später als heute sein",
+		"errorSummaryForm": "Das Formular enthält Fehler"
+	}
+}
